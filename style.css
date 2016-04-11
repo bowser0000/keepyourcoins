@@ -1,0 +1,35 @@
+html, body {
+	font-family: "Open Sans", sans-serif;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+body {
+	background-color: #444;
+	position: relative;
+}
+.btn {
+	background-color: rgba(255, 255, 255, 0.2);
+	border: 1px solid rgba(255, 255, 255, 0.9);
+	border-radius: 0.5rem;
+	color: rgba(255, 255, 255, 0.9);
+	margin: auto;
+	padding: 0.75rem;
+	text-decoration: none;
+	transition: all 0.2s ease;
+
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-o-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+}
+.btn:hover {
+	background-color: rgba(255, 255, 255, 0.4);
+	border-color: rgba(255, 255, 255, 1);
+	color: rgba(255, 255, 255, 1);
+}
