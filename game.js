@@ -19,6 +19,7 @@ function Game() {
   alert('You pay 6 coins and play some Titanfall.');
   coins = coins - 6;
   alert('You now have ' + coins + ' coin(s)!');
+  throw new Error('Work In Progress!');
 }
 
 Game();
