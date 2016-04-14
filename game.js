@@ -1,4 +1,4 @@
-//Work In Progress!
+//Work In Progress! https://www.github.com/bowser0000/keepyourocoins/
 
 function RandomDamage(min, max) {
 return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -13,6 +13,7 @@ var coins = 0 + var1;
 
 function Game2() {
 	throw new Error('Work In Progress!');
+
 }
 
 function Game() {
@@ -47,21 +48,17 @@ function Game() {
   				Game2();
   			}
   		}
-
   	} else {
-  		throw new Error('Use [run] or [attack]!');
-  	}
-  	} else {
-
+			Game2();
   	}
   } else if (path1 == 'right') {
   	if(path1a >= 0.25) {
   		alert('While walking, you find a monster.');
-  		var path1ma = prompt('Do you [run] or [attack]?').toLowerCase();
-  		if (path1ma == 'run') {
+  		var path1ma1 = prompt('Do you [run] or [attack]?').toLowerCase();
+  		if (path1ma1 == 'run') {
   			alert('You run away, but you drop ' + xd123 + ' coins on the way.');
   			Game2();
-  		} else if (path1ma == 'attack') {
+  		} else if (path1ma1 == 'attack') {
   			alert('You managed to fight off the monster.');
   			if (path1lose <= 0.25) {
   				alert('While fighting, you see that you lost 2 coins.');
@@ -77,7 +74,7 @@ function Game() {
   		throw new Error('Use [run] or [attack]!');
   	}
   	} else {
-
+			Game2();
   	}
   throw new Error('Work In Progress!');
 }
