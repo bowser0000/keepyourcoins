@@ -44,7 +44,7 @@
     .?`        1   L     .7.........?Ti..l
    ,`           L  .    .%    .`!       `j,
  .^             .  ..   .`   .^  .?7!?7+. 1
-.`              .  .`..`7.  .^  ,`      .i.; 
+.`              .  .`..`7.  .^  ,`      .i.;
 .7<..........~<<3?7!`    4. r  `          G%
                           J.` .!           %
                             JiJ           .`
@@ -65,12 +65,14 @@ var path1a = Math.random();
 var path1lose = Math.random();
 var xd123 = RandomDamage(3, 7);
 var xd12344 = RandomDamage(1, 5);
+var weapon = 'Wooden_Sword';
 var coins = var1;
 
 function Game2() {
+	alert('You continue on the road.');
+	alert('You find a little shop on the side');
+	alert('He says \'It\'s Christmas!\' He gives you a wooden sword for free!');
 	throw new Error('Work In Progress!');
-	alert('You continue on the road');
-	alert('AND YOU FIND ANOTHER MONSTER OOGA LOOGA BLOOGA')
 }
 
 function Game() {
@@ -101,6 +103,7 @@ function Game() {
   			} else {
   				alert('You find ' + xd12344 + ' coins!');
   				coins = coins + xd12344;
+					alert('You have ' + coins + ' coins!');
   				Game2();
   			}
   		}
@@ -122,6 +125,7 @@ function Game() {
   			} else {
   				alert('You find ' + xd12344 + ' coins!');
   				coins = coins + xd12344;
+					alert('You have ' + coins + ' coins!');
   				Game2();
   			}
   		}
