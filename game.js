@@ -42,7 +42,7 @@ function Game2() {
 	alert('He says \"It\'s Christmas!\" He gives you a wooden sword for free!');
 	alert('You inspect your ' + weapon);
   alert('Weapon: ' + weapon + '\nDamage: 1\nBattles Fought With: ' + battleswoodensword + '\nBattles Fought: ' + totalbattles);
-	alert('The shop keeper tells you \'Hey, go kill that guys over there with that sword, and I\'ll give you a few coins ;)\'');
+	alert('The shop keeper tells you \'Hey, go kill that guy over there with that sword, and I\'ll give you a few coins ;)\'');
 	var kill = prompt('Do you [kill him] or [do not]?').toLowerCase();
 	if (kill == 'kill him') {
 		if (kill2 >= 0.25) {
@@ -54,7 +54,7 @@ function Game2() {
 			Game3();
 		}
 	} else if (kill == 'do not') {
-		alert('You don\' kill him, and the shopkeeper gives you no coins.');
+		alert('You don\'t kill him, and the shopkeeper gives you no coins.');
 		Game3();
 	} else {
 		throw new Error('Use [kill him] or [do not]!');
@@ -121,7 +121,7 @@ function Game() {
   		throw new Error('Use [run] or [attack]!');
   	}
   	} else {
-			Game2();
+		throw new Error('Use [left] or [right]!');
   	}
   throw new Error('Work In Progress!');
 }
