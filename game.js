@@ -120,9 +120,9 @@ function Game() {
   	} else {
   		throw new Error('Use [run] or [attack]!');
   	}
-  	} else {
-		throw new Error('Use [left] or [right]!');
-  	}
+  } else {
+	throw new Error('Use [left] or [right]!');
+  }
 }
 
 Game();
