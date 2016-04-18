@@ -45,7 +45,7 @@ function Game2() {
 	alert('The shop keeper tells you \'Hey, go kill that guy over there with that sword, and I\'ll give you a few coins ;)\'');
 	var kill = prompt('Do you [kill him] or [do not]?').toLowerCase();
 	if (kill == 'kill him') {
-		if (kill2 >= 0.25) {
+		if (kill2 >= 0.5) {
 			alert('The guy manages to fight back, and kills you.\nGame Over.');
 			throw new Error ('You died!');
 		} else {
@@ -99,7 +99,7 @@ function Game() {
   	}
   } else if (path1 == 'right') {
   	if(path1a >= 0.25) {
-			totalbattles = 1;
+		totalbattles = 1;
   		alert('While walking, you find a monster.');
   		var path1ma1 = prompt('Do you [run] or [attack]?').toLowerCase();
   		if (path1ma1 == 'run') {
@@ -123,7 +123,6 @@ function Game() {
   	} else {
 		throw new Error('Use [left] or [right]!');
   	}
-  throw new Error('Work In Progress!');
 }
 
 Game();
