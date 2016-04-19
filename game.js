@@ -1,5 +1,6 @@
 //Work In Progress! Submit bugs to https://www.github.com/bowser0000/keepyourcoins/
 
+/*jshint maxerr: 1000 */
 function RandomDamage(min, max) {
 return Math.floor(Math.random() * (max - min + 1)) + min;
 }
@@ -37,7 +38,6 @@ function RandomBattle() {
 }
 
 function Game5() {
-	alert('This is the end! You finished with ' + coins + ' coin(s)!');
 	throw new Error('Work in Progress!');
 }
 
@@ -112,7 +112,7 @@ function Game2() {
 			alert('You end with ' + coins + ' coin(s)!');
 			throw new Error ('You died!');
 		} else {
-			alert('You kill him, and the shop keeper gives you ' + killwin + ' coins!');
+			alert('You kill kill him, and the shop keeper gives you ' + killwin + ' coins!');
 			coins = coins + killwin;
 			Game3();
 		}
