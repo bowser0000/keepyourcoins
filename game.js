@@ -34,11 +34,13 @@ var totalbattles = 0;
 
 function RandomBattle() {
 	alert('While adventuring, you found a monster!');
-	throw new Error('How did you get here?');
+	// TODO: Random Encounter
 }
 
 function Game5() {
+	alert('This is the end! You end with ' + coins + ' coin(s)!');
 	throw new Error('Work in Progress!');
+	// TODO: Bigger Story
 }
 
 function Game4() {
@@ -150,6 +152,7 @@ function Game() {
   			if (path1lose <= 0.25) {
   				alert('While fighting, you see that you lost 2 coins.');
   				coins = coins - 2;
+					Game2();
   			} else {
   				alert('You find ' + xd12344 + ' coins!');
   				coins = coins + xd12344;
