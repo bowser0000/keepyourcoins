@@ -1,5 +1,4 @@
-//Work In Progress! https://www.github.com/bowser0000/keepyourcoins/
-//ryan pls
+//Work In Progress! Submit bugs to https://www.github.com/bowser0000/keepyourcoins/
 
 function RandomDamage(min, max) {
 return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -13,6 +12,7 @@ var xd123 = RandomDamage(3, 7);
 var xd12344 = RandomDamage(1, 5);
 var kill2 = Math.random();
 var killwin = RandomDamage(10, 15);
+var route3a = Math.random();
 var weapon = 'Wooden Sword';
 var coins = var1;
 var battleswoodensword = 0;
@@ -31,9 +31,71 @@ var emeraldswordfire = 0;
 var emeraldswordfreeze = 0;
 var totalbattles = 0;
 
+function RandomBattle() {
+	alert('While adventuring, you found a monster!');
+	throw new Error('How did you get here?');
+}
+
+function Game5() {
+	alert('This is the end! You finished with ' + coins + ' coin(s)!');
+	throw new Error('Work in Progress!');
+}
+
+function Game4() {
+	alert('You walk towards a intersection.');
+	var route3 = prompt('Do you go [straight], [left] or [right]?').toLowerCase();
+	if (route3 == 'straight') {
+		alert('You go straight, not worrying about the other paths.');
+		alert('You get to an end. The only paths now are going left and right.');
+		var route3s = prompt('Do you take the [left] or the [right]?');
+		if (route3s == 'left') {
+			alert('You can see the exit in your view. While getting closer, you feel a tug on your leg. 20 coins! It must be your lucky day!');
+			coins = coins + 20;
+			Game5();
+		} else if (route3s == 'right') {
+			alert('You find yourself walking into a forest. The trees and leaves are getting thicker and thicker. You are looking straight up at the sky. Wondering how to get back home. Not paying attention to the ground, you fall down a cliff.');
+			alert('You end with ' + coins + ' coin(s)!');
+			throw new Error('You died!');
+		} else {
+			throw new Error('Use [left] or [right]!');
+		}
+	} else if (route3 == 'left') {
+		if (route3a >= 0.5) {
+			alert('You take the left. You see a small pile of leaves. You decide to have some fun and jump right in the middle. You fall into a small pit and die.');
+			alert('You end with ' + coins + ' coin(s)!');
+			throw new Error('You died!');
+		} else {
+			Game5();
+		}
+	} else if (route3 == 'right') {
+		if (route3a <= 0.5) {
+			alert('You take the right. You see a small pile of leaves. You decide to have some fun and jump right in the middle. You fall into a small put and die.');
+			alert('You end with ' + coins + ' coin(s)!');
+			throw new Error('You died!');
+		} else {
+			Game5();
+		}
+	} else {
+		throw new Error('Use [straight], [left] or [right]!');
+	}
+}
+
 function Game3() {
-	alert('You have ' + coins + ' coin(s!)');
-	throw new Error('Work In Progress!');
+	alert('You have ' + coins + ' coin(s)!');
+	alert('You continue onto the next path.');
+	alert('You find a small sign with moss growing on it. You can see small words saying Route 3.');
+	var dustoff = prompt('Do you [dust off] or [do not]?').toLowerCase();
+	if (dustoff == 'dust off') {
+		alert('You dust off the mold, finding a coin under the moss.');
+		coins = coins + 1;
+		alert('The sign says \"Entering: Route 3.\" You can see small dents under the words. You squint your eyes and look closer. \"Straight, left.\"');
+		Game4();
+	} else if (dustoff == 'do not') {
+		alert('You don\'t dust off the sign, you continue on the path without glancing back.');
+		Game4();
+	} else {
+		throw new Error('Use [dust off] or [do not]!');
+	}
 }
 
 function Game2() {
@@ -41,15 +103,16 @@ function Game2() {
 	alert('You find a little shop on the side');
 	alert('He says \"It\'s Christmas!\" He gives you a wooden sword for free!');
 	alert('You inspect your ' + weapon);
-  alert('Weapon: ' + weapon + '\nDamage: 1\nBattles Fought With: ' + battleswoodensword + '\nBattles Fought: ' + totalbattles);
+  alert('Coins: ' + coins + '\nWeapon: ' + weapon + '\nDamage: 1\nBattles Fought With: ' + battleswoodensword + '\nBattles Fought: ' + totalbattles);
 	alert('The shop keeper tells you \'Hey, go kill that guy over there with that sword, and I\'ll give you a few coins ;)\'');
 	var kill = prompt('Do you [kill him] or [do not]?').toLowerCase();
 	if (kill == 'kill him') {
 		if (kill2 >= 0.5) {
-			alert('The guy manages to fight back, and kills you.\nGame Over.');
+			alert('The guy manages to fight back, and kills you.');
+			alert('You end with ' + coins + ' coin(s)!');
 			throw new Error ('You died!');
 		} else {
-			alert('You kill kill him, and the shop keeper gives you ' + killwin + ' coins!');
+			alert('You kill him, and the shop keeper gives you ' + killwin + ' coins!');
 			coins = coins + killwin;
 			Game3();
 		}
@@ -67,7 +130,7 @@ function Game() {
   alert('You get out of bed and take a bath.');
   alert('While taking off your pants, you find ' + var2 + ' coin(s) in pocket!');
   coins = coins + var2;
-  alert('You now have ' + coins + ' coins!');
+  alert('You now have ' + coins + ' coin(s)!');
   alert('You go downstairs and find your XBOX gold ran out.');
   alert('You pay 6 coins and play some Titanfall.');
   coins = coins - 6;
