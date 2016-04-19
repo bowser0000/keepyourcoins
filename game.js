@@ -102,9 +102,9 @@ function Game3() {
 
 function Game2() {
 	alert('You continue on the road.');
-	alert('You find a little shop on the side');
+	alert('You find a little shop on the side.');
 	alert('He says \"It\'s Christmas!\" He gives you a wooden sword for free!');
-	alert('You inspect your ' + weapon);
+	alert('You inspect your ' + weapon + '.');
   alert('Coins: ' + coins + '\nWeapon: ' + weapon + '\nDamage: 1\nBattles Fought With: ' + battleswoodensword + '\nBattles Fought: ' + totalbattles);
 	alert('The shop keeper tells you \'Hey, go kill that guy over there with that sword, and I\'ll give you a few coins ;)\'');
 	var kill = prompt('Do you [kill him] or [do not]?').toLowerCase();
@@ -127,6 +127,7 @@ function Game2() {
 }
 
 function Game() {
+	alert('The goal of the game is to end with the most coins! The maximum amount you can get is 44.');
   alert('You wake up, and find ' + var1 + ' coin(s) on your bed!');
   alert('You now have ' + coins + ' coin(s)!');
   alert('You get out of bed and take a bath.');
@@ -176,6 +177,7 @@ function Game() {
   			if (path1lose <= 0.25) {
   				alert('While fighting, you see that you lost 2 coins.');
   				coins = coins - 2;
+					Game2();
   			} else {
   				alert('You find ' + xd12344 + ' coins!');
   				coins = coins + xd12344;
