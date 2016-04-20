@@ -32,29 +32,30 @@ var emeraldswordfire = 0;
 var emeraldswordfreeze = 0;
 var totalbattles = 0;
 
-function randomBattle() {
+/*function randomBattle() {
 	alert('While walking, you find a monster.');
 	var path1ma = prompt('Do you [run] or [attack]?').toLowerCase();
 	if (path1ma == 'run') {
-		alert('You run away, but you drop ' + '/*Random Var1*/' + ' coins on the way.');
-		// NextFunction();
+		alert('You run away, but you drop ' + Random Var1 + ' coins on the way.');
+		NextFunction();
 	} else if (path1ma == 'attack') {
 		alert('You managed to fight off the monster.');
 		if (path1lose <= 0.25) {
 			alert('While fighting, you see that you lost 2 coins.');
 			coins = coins - 2;
-			// NextFunction();
+			NextFunction();
 		} else {
-			alert('You find ' + '/*Random Var*/' + ' coins!');
-			coins = coins + 0/*Random Var*/;
+			alert('You find ' + Random Var + ' coins!');
+			coins = coins + Random Var;
 			alert('You have ' + coins + ' coins!');
-			// NextFunction();
+			NextFunction();
 		}
 	}
-	// TODO: Random Encounter
-}
+	TODO: Random Encounter
+}*/
 
 function game6() {
+	alert('You walk towards the hotel, glancing')
 		alert('This is the end! You end with ' + coins + ' coin(s)!');
 		throw new Error('Work In Progress!');
 }
@@ -67,8 +68,8 @@ function game5() {
 	alert('You see a someless guy, asking for money. His sign says \'Need Money for Kids.\'');
 	var donate = prompt('Do you [give money] or [do not?]').toLowerCase();
 	if (donate == 'give money') {
-		alert('You give the man 2 coins.')
-		alert('He replies with \'Hey bro. We\'re actually recording a video. Here\'s 10 coins because you donated!');
+		alert('You give the man 2 coins.');
+		alert('He replies with \'Hey bro. We\'re actually recording a video. Social experiment bro! Here\'s 10 coins because you donated!');
 		coins = coins + 8;
 		alert('You have ' + coins + ' coin(s)!');
 		game6();
