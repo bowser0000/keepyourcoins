@@ -1,18 +1,18 @@
 //Work In Progress! Submit bugs to https://www.github.com/bowser0000/keepyourcoins/
 
 /*jshint maxerr: 1000 */
-function RandomDamage(min, max) {
+function randomDamage(min, max) {
 return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-var var1 = RandomDamage(1, 7);
-var var2 = RandomDamage(1, 3);
+var var1 = randomDamage(1, 7);
+var var2 = randomDamage(1, 3);
 var path1a = Math.random();
 var path1lose = Math.random();
-var xd123 = RandomDamage(3, 7);
-var xd12344 = RandomDamage(1, 5);
+var xd123 = randomDamage(3, 7);
+var xd12344 = randomDamage(1, 5);
 var kill2 = Math.random();
-var killwin = RandomDamage(10, 15);
+var killwin = randomDamage(10, 15);
 var route3a = Math.random();
 var weapon = 'Wooden Sword';
 var coins = var1;
@@ -32,18 +32,55 @@ var emeraldswordfire = 0;
 var emeraldswordfreeze = 0;
 var totalbattles = 0;
 
-function RandomBattle() {
-	alert('While adventuring, you found a monster!');
+function randomBattle() {
+	alert('While walking, you find a monster.');
+	var path1ma = prompt('Do you [run] or [attack]?').toLowerCase();
+	if (path1ma == 'run') {
+		alert('You run away, but you drop ' + '/*Random Var1*/' + ' coins on the way.');
+		// NextFunction();
+	} else if (path1ma == 'attack') {
+		alert('You managed to fight off the monster.');
+		if (path1lose <= 0.25) {
+			alert('While fighting, you see that you lost 2 coins.');
+			coins = coins - 2;
+			// NextFunction();
+		} else {
+			alert('You find ' + '/*Random Var*/' + ' coins!');
+			coins = coins + 0/*Random Var*/;
+			alert('You have ' + coins + ' coins!');
+			// NextFunction();
+		}
+	}
 	// TODO: Random Encounter
 }
 
-function Game5() {
-	alert('This is the end! You end with ' + coins + ' coin(s)!');
-	throw new Error('Work in Progress!');
-	// TODO: Bigger Story
+function game6() {
+		alert('This is the end! You end with ' + coins + ' coin(s)!');
+		throw new Error('Work In Progress!');
 }
 
-function Game4() {
+function game5() {
+	alert('A man comes up to you, asking what your name is.');
+	var nick = prompt('What do you call yourself?');
+	alert('The man says \"Hello ' + nick + '! Welcome to our town! Mount Kajamakam! Hope you enjoy your stay!\" He gives you a pass to a hotel just down the street.');
+	alert('You walk towards the hotel.');
+	alert('You see a someless guy, asking for money. His sign says \'Need Money for Kids.\'');
+	var donate = prompt('Do you [give money] or [do not?]').toLowerCase();
+	if (donate == 'give money') {
+		alert('You give the man 2 coins.')
+		alert('He replies with \'Hey bro. We\'re actually recording a video. Here\'s 10 coins because you donated!');
+		coins = coins + 8;
+		alert('You have ' + coins + ' coin(s)!');
+		game6();
+	} else if (donate == 'do not') {
+		alert('You don\'t give the man any money. You don\'t even glance at him, trying not to make it more awkward.');
+		game6();
+	} else {
+		throw new Error('Use [give money] or [do not]!');
+	}
+}
+
+function game4() {
 	alert('You walk towards a intersection.');
 	var route3 = prompt('Do you go [straight], [left] or [right]?').toLowerCase();
 	if (route3 == 'straight') {
@@ -53,7 +90,7 @@ function Game4() {
 		if (route3s == 'left') {
 			alert('You can see the exit in your view. While getting closer, you feel a tug on your leg. 20 coins! It must be your lucky day!');
 			coins = coins + 20;
-			Game5();
+			game5();
 		} else if (route3s == 'right') {
 			alert('You find yourself walking into a forest. The trees and leaves are getting thicker and thicker. You are looking straight up at the sky. Wondering how to get back home. Not paying attention to the ground, you fall down a cliff.');
 			alert('You end with ' + coins + ' coin(s)!');
@@ -67,7 +104,7 @@ function Game4() {
 			alert('You end with ' + coins + ' coin(s)!');
 			throw new Error('You died!');
 		} else {
-			Game5();
+			game5();
 		}
 	} else if (route3 == 'right') {
 		if (route3a <= 0.5) {
@@ -75,14 +112,14 @@ function Game4() {
 			alert('You end with ' + coins + ' coin(s)!');
 			throw new Error('You died!');
 		} else {
-			Game5();
+			game5();
 		}
 	} else {
 		throw new Error('Use [straight], [left] or [right]!');
 	}
 }
 
-function Game3() {
+function game3() {
 	alert('You have ' + coins + ' coin(s)!');
 	alert('You continue onto the next path.');
 	alert('You find a small sign with moss growing on it. You can see small words saying Route 3.');
@@ -91,16 +128,16 @@ function Game3() {
 		alert('You dust off the mold, finding a coin under the moss.');
 		coins = coins + 1;
 		alert('The sign says \"Entering: Route 3.\" You can see small dents under the words. You squint your eyes and look closer. \"Straight, left.\"');
-		Game4();
+		game4();
 	} else if (dustoff == 'do not') {
 		alert('You don\'t dust off the sign, you continue on the path without glancing back.');
-		Game4();
+		game4();
 	} else {
 		throw new Error('Use [dust off] or [do not]!');
 	}
 }
 
-function Game2() {
+function game2() {
 	alert('You continue on the road.');
 	alert('You find a little shop on the side.');
 	alert('He says \"It\'s Christmas!\" He gives you a wooden sword for free!');
@@ -116,17 +153,17 @@ function Game2() {
 		} else {
 			alert('You kill kill him, and the shop keeper gives you ' + killwin + ' coins!');
 			coins = coins + killwin;
-			Game3();
+			game3();
 		}
 	} else if (kill == 'do not') {
 		alert('You don\'t kill him, and the shopkeeper gives you no coins.');
-		Game3();
+		game3();
 	} else {
 		throw new Error('Use [kill him] or [do not]!');
 	}
 }
 
-function Game() {
+function game() {
 	alert('The goal of the game is to end with the most coins! The maximum amount you can get is 44.');
   alert('You wake up, and find ' + var1 + ' coin(s) on your bed!');
   alert('You now have ' + coins + ' coin(s)!');
@@ -147,22 +184,22 @@ function Game() {
   		var path1ma = prompt('Do you [run] or [attack]?').toLowerCase();
   		if (path1ma == 'run') {
   			alert('You run away, but you drop ' + xd123 + ' coins on the way.');
-  			Game2();
+  			game2();
   		} else if (path1ma == 'attack') {
   			alert('You managed to fight off the monster.');
   			if (path1lose <= 0.25) {
   				alert('While fighting, you see that you lost 2 coins.');
   				coins = coins - 2;
-					Game2();
+					game2();
   			} else {
   				alert('You find ' + xd12344 + ' coins!');
   				coins = coins + xd12344;
 					alert('You have ' + coins + ' coins!');
-  				Game2();
+  				game2();
   			}
   		}
   	} else {
-			Game2();
+			game2();
   	}
   } else if (path1 == 'right') {
   	if(path1a >= 0.25) {
@@ -171,18 +208,18 @@ function Game() {
   		var path1ma1 = prompt('Do you [run] or [attack]?').toLowerCase();
   		if (path1ma1 == 'run') {
   			alert('You run away, but you drop ' + xd123 + ' coins on the way.');
-  			Game2();
+  			game2();
   		} else if (path1ma1 == 'attack') {
   			alert('You managed to fight off the monster.');
   			if (path1lose <= 0.25) {
   				alert('While fighting, you see that you lost 2 coins.');
   				coins = coins - 2;
-					Game2();
+					game2();
   			} else {
   				alert('You find ' + xd12344 + ' coins!');
   				coins = coins + xd12344;
 					alert('You have ' + coins + ' coins!');
-  				Game2();
+  				game2();
   			}
   		}
   	} else {
@@ -193,4 +230,4 @@ function Game() {
   }
 }
 
-Game();
+game();
