@@ -151,7 +151,7 @@ function game2() {
 			alert('You end with ' + coins + ' coin(s)!');
 			throw new Error ('You died!');
 		} else {
-			alert('You kill kill him, and the shop keeper gives you ' + killwin + ' coins!');
+			alert('You kill him, and the shop keeper gives you ' + killwin + ' coins!');
 			coins = coins + killwin;
 			game3();
 		}
