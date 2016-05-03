@@ -2,7 +2,7 @@
 
 /*jshint maxerr: 1000 */
 function randomDamage(min, max) {
-return Math.floor(Math.random() * (max - min + 1)) + min;
+	return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
 var var1 = randomDamage(1, 7);
@@ -55,9 +55,13 @@ var totalbattles = 0;
 }*/
 
 function game6() {
-	alert('You walk towards the hotel, glancing')
-		alert('This is the end! You end with ' + coins + ' coin(s)!');
-		throw new Error('Work In Progress!');
+	alert('You walk towards the hotel, walking across a bridge, which seems to go across a river');
+	alert('You enter your card, but it seems to not be working.');
+	alert('You walk down the office to the front.');
+	alert('You ask \"My card isn\'t working. Could you give me another?\"');
+	alert('');
+	alert('This is the end! You end with ' + coins + ' coin(s)!');
+	throw new Error('Work In Progress!');
 }
 
 function game5() {
