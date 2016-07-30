@@ -72,8 +72,8 @@ function game6() {
 				throw new Error('You have no weapon');
 			}
 		} else {
-			alert('Diavla has ' + boss1hp + ' HP left!');
-			alert('Diavla did ' + boss1attack + ' damage to you!');
+			alert('Dialva has ' + boss1hp + ' HP left!');
+			alert('Dialva did ' + boss1attack + ' damage to you!');
 			hp = hp - boss1attack;
 			alert('You have ' + hp + ' HP left!');
 			boss1();
@@ -169,7 +169,7 @@ function game2() {
 	alert('You find a little shop on the side.');
 	alert('He says \"It\'s Christmas!\" He gives you a wooden sword for free!');
 	alert('You inspect your ' + weapon + '.');
-  alert('Coins: ' + coins + '\nWeapon: ' + weapon + '\nDamage: 1\nBattles Fought With: ' + battleswoodensword + '\nBattles Fought: ' + totalbattles);
+  alert('Coins: ' + coins + '\nWeapon: ' + weapon + '\nDamage: ' + damage + '\nBattles Fought With: ' + battleswoodensword + '\nBattles Fought: ' + totalbattles);
 	alert('The shop keeper tells you \'Hey, go kill that guy over there with that sword, and I\'ll give you a few coins ;)\'');
 	var kill = prompt('Do you [kill him] or [do not]?').toLowerCase();
 	if (kill == 'kill him') {
@@ -190,82 +190,90 @@ function game2() {
 	}
 }
 
+function game1() {
+	alert('You wake up, and find ' + var1 + ' coin(s) on your bed!');
+	alert('You now have ' + coins + ' coin(s)!');
+	alert('You get out of bed and take a bath.');
+	alert('While taking off your pants, you find ' + var2 + ' coin(s) in pocket!');
+	coins = coins + var2;
+	alert('You now have ' + coins + ' coin(s)!');
+	alert('You go downstairs and find your XBOX gold ran out.');
+	alert('You pay 6 coins and play some Titanfall.');
+	coins = coins - 6;
+	alert('You now have ' + coins + ' coin(s)!');
+	alert('You walk outside. There is a path to the left and one to the right.');
+	var path1 = prompt('Do you take the [left] path or the [right] path?').toLowerCase();
+	if (path1 == 'left') {
+			if(path1a >= 0.25) {
+					totalbattles = 1;
+					alert('While walking, you find a monster.');
+					var path1ma = prompt('Do you [run] or [attack]?').toLowerCase();
+					if (path1ma == 'run') {
+						alert('You run away, but you drop ' + xd123 + ' coins on the way.');
+						game2();
+					} else if (path1ma == 'attack') {
+						alert('You managed to fight off the monster.');
+						if (path1lose <= 0.25) {
+							alert('While fighting, you see that you lost 2 coins.');
+							coins = coins - 2;
+							game2();
+							} else {
+								alert('You find ' + xd12344 + ' coins!');
+								coins = coins + xd12344;
+								alert('You have ' + coins + ' coins!');
+								game2();
+							}
+						}
+					} else {
+							game2();
+						}
+					} else if (path1 == 'right') {
+						if(path1a >= 0.25) {
+								totalbattles = 1;
+								alert('While walking, you find a monster.');
+								var path1ma1 = prompt('Do you [run] or [attack]?').toLowerCase();
+								if (path1ma1 == 'run') {
+									alert('You run away, but you drop ' + xd123 + ' coins on the way.');
+									game2();
+								} else if (path1ma1 == 'attack') {
+									alert('You managed to fight off the monster.');
+									if (path1lose <= 0.25) {
+										alert('While fighting, you see that you lost 2 coins.');
+										coins = coins - 2;
+											game2();
+										} else {
+											alert('You find ' + xd12344 + ' coins!');
+											coins = coins + xd12344;
+												alert('You have ' + coins + ' coins!');
+												game2();
+											}
+										}
+									} else {
+										throw new Error('Use [run] or [attack]!');
+									}
+								} else {
+										throw new Error('Use [left] or [right]!');
+									}
+								}
+							}
+}
+
 function game() {
 	alert('The goal of the game is to end with the most coins! The maximum amount you can get is 64.');
 	var name = prompt('What is your name?');
 		if (name == 'Harshan') {
 			weapon = 'Harshan Sword';
 			damage = 9999;
+			game1();
 		} else if (name == 'Mr. Madden') {
 			weapon = 'Mr. Madden Sword';
 			damage = 15;
 			fire = 5;
+			game1();
 		} else {
-  		alert('You wake up, and find ' + var1 + ' coin(s) on your bed!');
-  		alert('You now have ' + coins + ' coin(s)!');
-  		alert('You get out of bed and take a bath.');
-  		alert('While taking off your pants, you find ' + var2 + ' coin(s) in pocket!');
-  		coins = coins + var2;
-  		alert('You now have ' + coins + ' coin(s)!');
-  		alert('You go downstairs and find your XBOX gold ran out.');
-  		alert('You pay 6 coins and play some Titanfall.');
-  		coins = coins - 6;
-  		alert('You now have ' + coins + ' coin(s)!');
-  		alert('You walk outside. There is a path to the left and one to the right.');
-  		var path1 = prompt('Do you take the [left] path or the [right] path?').toLowerCase();
-  		if (path1 == 'left') {
-					if(path1a >= 0.25) {
-							totalbattles = 1;
-  						alert('While walking, you find a monster.');
-  						var path1ma = prompt('Do you [run] or [attack]?').toLowerCase();
-  						if (path1ma == 'run') {
-  							alert('You run away, but you drop ' + xd123 + ' coins on the way.');
-  							game2();
-  						} else if (path1ma == 'attack') {
-  							alert('You managed to fight off the monster.');
-  							if (path1lose <= 0.25) {
-  								alert('While fighting, you see that you lost 2 coins.');
-  								coins = coins - 2;
-									game2();
-  								} else {
-  									alert('You find ' + xd12344 + ' coins!');
-  									coins = coins + xd12344;
-										alert('You have ' + coins + ' coins!');
-  									game2();
-  								}
-  							}
-  						} else {
-									game2();
-  							}
-  						} else if (path1 == 'right') {
-  							if(path1a >= 0.25) {
-										totalbattles = 1;
-  									alert('While walking, you find a monster.');
-  									var path1ma1 = prompt('Do you [run] or [attack]?').toLowerCase();
-  									if (path1ma1 == 'run') {
-  										alert('You run away, but you drop ' + xd123 + ' coins on the way.');
-  										game2();
-  									} else if (path1ma1 == 'attack') {
-  										alert('You managed to fight off the monster.');
-  										if (path1lose <= 0.25) {
-  											alert('While fighting, you see that you lost 2 coins.');
-  											coins = coins - 2;
-													game2();
-  											} else {
-  												alert('You find ' + xd12344 + ' coins!');
-  												coins = coins + xd12344;
-														alert('You have ' + coins + ' coins!');
-  													game2();
-  												}
-  											}
-  										} else {
-  											throw new Error('Use [run] or [attack]!');
-  										}
-  									} else {
-												throw new Error('Use [left] or [right]!');
-  										}
-										}
-									}
+  		game1();
+		}
+		
 game();
 
 //Looking at the source code, eh? ( ͡° ͜ʖ ͡°)
