@@ -19,7 +19,7 @@ var coins = var1;
 var hp = 50;
 var damage = 3;
 var fire = 0;
-var boss1hp = 20;
+var boss1hp = 25;
 var boss1attack = 2;
 // Iron Sword : 5
 // Diamond Sword : 7
@@ -44,46 +44,48 @@ function game6() {
 	alert('You walk downstairs..');
 	alert('A giant monster appears. You are sucked into battle.');
 	alert('You have ' + hp + ' HP and do ' + damage + ' damage.');
-	function boss1() {
-	var boss1 = prompt('Do you [run] or [attack]?');
-	if (boss1 == 'run') {
-		alert('You can\'t run from a boss battle!');
-		boss1();
-	} else if (boss1 == 'attack') {
-		alert('You did ' + damage + ' damage!');
-		boss1hp = boss1hp - damage;
-		if (boss1hp <= 0) {
-			alert('You beat Dialva!');
-			alert('You got 20 coins!');
-			coins = coins + 20;
-			if (weapon == 'Wooden Sword') {
-				battleswoodensword = battleswoodensword + 1;
-				alert('This is the end! You ended with ' + coins + ' coin(s)!');
-				throw new Error('Work In Progress!');
-			} else if (weapon == 'Harshan Sword') {
-				battlesharshansword = battlesharshansword + 1;
-				alert('This is the end! You ended with ' + coins + ' coin(s)!');
-				throw new Error('Work In Progress!');
-			} else if (weapon == 'Mr. Madden Sword') {
-				battlesmrmaddensword = battlesmrmaddensword + 1;
-				alert('This is the end! You ended with ' + coins + ' coin(s)!');
-				throw new Error('Work In Progress!');
+	function boss1func() {
+		var boss1 = prompt('Do you [run] or [attack]?');
+		if (boss1 == 'run') {
+			alert('You can\'t run from a boss battle!');
+			boss1func();
+		} else if (boss1 == 'attack') {
+			var dev1 = damage + fire;
+			alert('You did ' + dev1 + ' damage!');
+			boss1hp = boss1hp - dev1;
+			if (boss1hp <= 0) {
+				alert('You beat Dialva!');
+				alert('You got 20 coins!');
+				coins = coins + 20;
+				if (weapon == 'Harshan Sword') {
+					battlesharshansword = battlesharshansword + 1;
+					totalbattles = totalbattles + 1;
+					alert('This is the end! You ended with ' + coins + ' coin(s)!');
+					throw new Error('Work In Progress!');
+				} else if (weapon == 'Mr. Madden Sword') {
+					battlesmrmaddensword = battlesmrmaddensword + 1;
+					totalbattles = totalbattles + 1;
+					alert('This is the end! You ended with ' + coins + ' coin(s)!');
+					throw new Error('Work In Progress!');
+				} else {
+					battleswoodensword = battleswoodensword + 1;
+					totalbattles = totalbattles + 1;
+					alert('This is the end! You ended with ' + coins + ' coin(s)!');
+					throw new Error('Work In Progress!');
+				}
 			} else {
-				throw new Error('You have no weapon');
+				alert('Dialva has ' + boss1hp + ' HP left!');
+				alert('Dialva did ' + boss1attack + ' damage to you!');
+				hp = hp - boss1attack;
+				alert('You have ' + hp + ' HP left!');
+				boss1func();
 			}
 		} else {
-			alert('Dialva has ' + boss1hp + ' HP left!');
-			alert('Dialva did ' + boss1attack + ' damage to you!');
-			hp = hp - boss1attack;
-			alert('You have ' + hp + ' HP left!');
-			boss1();
+			alert('Please use [run] or [attack]!');
+			boss1func();
 		}
-	} else {
-		alert('Please use [run] or [attack]!');
-		boss1();
 	}
-}
-	boss1();
+	boss1func();
 }
 
 function game5() {
@@ -168,7 +170,7 @@ function game3() {
 function game2() {
 	alert('You continue on the road.');
 	alert('You find a little shop on the side.');
-	alert('He says \"It\'s Christmas!\" He gives you a wooden sword for free!');
+	alert('He says \"It\'s Christmas!\" He gives you a ' + weapon + ' for free!');
 	alert('You inspect your ' + weapon + '.');
   alert('Coins: ' + coins + '\nWeapon: ' + weapon + '\nDamage: ' + damage + '\nBattles Fought With: ' + battleswoodensword + '\nBattles Fought: ' + totalbattles);
 	alert('The shop keeper tells you \'Hey, go kill that guy over there with that sword, and I\'ll give you a few coins ;)\'');
