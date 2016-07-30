@@ -253,9 +253,7 @@ function game1() {
 									}
 								} else {
 										throw new Error('Use [left] or [right]!');
-									}
-								}
-							}
+						}
 }
 
 function game() {
@@ -273,7 +271,8 @@ function game() {
 		} else {
   		game1();
 		}
-		
+}
+
 game();
 
 //Looking at the source code, eh? ( ͡° ͜ʖ ͡°)
