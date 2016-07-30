@@ -4,7 +4,7 @@ window.onload = function () {
 	play.className = 'btn';
 	play.textContent = 'Play Game';
 	play.onclick = function () {
-		Game();
+		game();
 		return false;
 	};
 	document.body.appendChild(play);
