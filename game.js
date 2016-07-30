@@ -43,7 +43,7 @@ function game6() {
 	alert('You sleep for the night and wake up the next day.');
 	alert('You walk downstairs..');
 	alert('A giant monster appears. You are sucked into battle.');
-	alert('You have ' + hp + ' and do ' + damage + ' damage.');
+	alert('You have ' + hp + ' HP and do ' + damage + ' damage.');
 	function boss1() {
 	var boss1 = prompt('Do you [run] or [attack]?');
 	if (boss1 == 'run') {
