@@ -103,7 +103,7 @@ function game5() {
 		alert('You don\'t give the man any money. You don\'t even glance at him, trying not to make it more awkward.');
 		game6();
 	} else {
-		throw new Error('Use [give money] or [do not]!');
+		alert('Use [give money] or [do not]!');
 	}
 }
 
@@ -123,7 +123,7 @@ function game4() {
 			alert('You ended with ' + coins + ' coin(s)!');
 			throw new Error('You died!');
 		} else {
-			throw new Error('Use [left] or [right]!');
+			alert('Use [left] or [right]!');
 		}
 	} else if (route3 == 'left') {
 		if (route3a >= 0.5) {
@@ -142,7 +142,8 @@ function game4() {
 			game5();
 		}
 	} else {
-		throw new Error('Use [straight], [left] or [right]!');
+		alert('Use [straight], [left] or [right]!');
+		game4();
 	}
 }
 
@@ -160,7 +161,7 @@ function game3() {
 		alert('You don\'t dust off the sign, you continue on the path without glancing back.');
 		game4();
 	} else {
-		throw new Error('Use [dust off] or [do not]!');
+		alert('Use [dust off] or [do not]!');
 	}
 }
 
@@ -186,7 +187,7 @@ function game2() {
 		alert('You don\'t kill him, and the shopkeeper gives you no coins.');
 		game3();
 	} else {
-		throw new Error('Use [kill him] or [do not]!');
+		alert('Use [kill him] or [do not]!');
 	}
 }
 
@@ -249,10 +250,10 @@ function game1() {
 											}
 										}
 									} else {
-										throw new Error('Use [run] or [attack]!');
+										alert('Use [run] or [attack]!');
 									}
 								} else {
-										throw new Error('Use [left] or [right]!');
+										alert('Use [left] or [right]!');
 						}
 }
 
