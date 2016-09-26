@@ -1,37 +1,70 @@
 //Work In Progress! Submit bugs to https://www.github.com/bowser0000/keepyourcoins/issues/
 
 /*jshint maxerr: 1000 */
+
+//Random Damage: To be added (Maybe after first boss?)
 function randomDamage(min, max) {
 	return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-var var1 = randomDamage(1, 7);
-var var2 = randomDamage(1, 3);
-var path1a = Math.random();
-var path1lose = Math.random();
-var xd123 = randomDamage(3, 7);
-var xd12344 = randomDamage(1, 5);
-var kill2 = Math.random();
-var killwin = randomDamage(10, 15);
-var route3a = Math.random();
-var weapon = 'Wooden Sword';
-var coins = var1;
-var hp = 50;
-var damage = 3;
-var fire = 0;
-var boss1hp = 25;
-var boss1attack = 2;
-// Iron Sword : 5
-// Diamond Sword : 7
-// Emerald Sword : 10
-// Mr. Madden Sword : 15 (+5 per turn)
-var battleswoodensword = 0;
+var var1 = randomDamage(1, 7); //Starting Coins
+var var2 = randomDamage(1, 3); //Coins in pants
+var path1a = Math.random(); //Finding monster
+var path1lose = Math.random(); //Losing money against monster
+var xd123 = randomDamage(3, 7);  //Dropping coins by running
+var xd12344 = randomDamage(1, 5); //Finding coins by winning
+var kill2 = Math.random(); //Killing stranger
+var killwin = randomDamage(10, 15); //Money gained by killing him
+var route3a = Math.random();  //If dying in forest
+var weapon = 'Wooden Sword'; //Current Weapon (Default Wooden Sword)
+var coins = var1; //Coin Count (Default Starting COins (var1))
+var hp = 50; //Player HP
+var damage = 3; //Damage for weapon
+var fire = 0; //Extra Damage (Mr. Madden Sword only)
+var damagedone = damage + fire; //Damage dealt per turn
+var boss1hp = 25; //Dialva HP
+var boss1attack = 2; //Dialva attack damage
+/* Weapon Damage
+Wooden Sword : 3
+Iron Sword : 5
+Diamond Sword : 7
+Emerald Sword : 10
+Mr. Madden Sword : 15 (+5 per turn)
+Harshan Sword : 9999
+*/
+var battleswoodensword = 0; //Battles done with each weapon
 var battlesironsword = 0;
 var battlesdiamondsword = 0;
 var battlesemeraldsword = 0;
 var battlesharshansword = 0;
 var battlesmrmaddensword = 0;
 var totalbattles = 0;
+
+function game8() {
+	alert('');
+}
+
+function game7() {
+		alert('You finished probably the toughest battle of your life.');
+		alert('A sketchy looking man approaches you.');
+		alert('\"Hey man, you gotta buy this Iron Sword. I have to get the cops off- I mean, It\'s really good and does 5 damage. It\'s only 15 coins!');
+		var isword = prompt('Will you buy the Iron Sword? [Yes] or [No]').toLowerCase();
+		if (isword == 'yes') {
+			coins = coins - 15;
+			if (weapon == 'Harshan Sword') {
+				alert('You have have the Harshan Sword, you did not equip the Iron Sword');
+				game8();
+			} else if (weapon == 'Mr. Madden Sword') {
+				alert('You have the Mr. Madden Sword, you did not equip the Iron Sword');
+				game8();
+			} else {
+				alert('You equipped the Iron Sword.');
+				damage = 5;
+				weapon = 'Iron Sword';
+				game8();
+			}
+		}
+}
 
 function game6() {
 	alert('You walk towards the hotel, walking across a bridge, which seems to go across a river');
@@ -50,9 +83,8 @@ function game6() {
 			alert('You can\'t run from a boss battle!');
 			boss1func();
 		} else if (boss1 == 'attack') {
-			var dev1 = damage + fire;
-			alert('You did ' + dev1 + ' damage!');
-			boss1hp = boss1hp - dev1;
+			alert('You did ' + damagedone + ' damage!');
+			boss1hp = boss1hp - damagedone;
 			if (boss1hp <= 0) {
 				alert('You beat Dialva!');
 				alert('You got 20 coins!');
@@ -60,18 +92,15 @@ function game6() {
 				if (weapon == 'Harshan Sword') {
 					battlesharshansword = battlesharshansword + 1;
 					totalbattles = totalbattles + 1;
-					alert('This is the end! You ended with ' + coins + ' coin(s)!');
-					throw new Error('Work In Progress!');
+					game7();
 				} else if (weapon == 'Mr. Madden Sword') {
 					battlesmrmaddensword = battlesmrmaddensword + 1;
 					totalbattles = totalbattles + 1;
-					alert('This is the end! You ended with ' + coins + ' coin(s)!');
-					throw new Error('Work In Progress!');
+					game7();
 				} else {
 					battleswoodensword = battleswoodensword + 1;
 					totalbattles = totalbattles + 1;
-					alert('This is the end! You ended with ' + coins + ' coin(s)!');
-					throw new Error('Work In Progress!');
+					game7();
 				}
 			} else {
 				alert('Dialva has ' + boss1hp + ' HP left!');
