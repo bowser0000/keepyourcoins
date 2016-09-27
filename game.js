@@ -135,7 +135,6 @@ function game5() {
   alert('Welcome to our town, \'Mount Kajamakam!\' Hope you enjoy your stay!\" He gives you a pass to a hotel just down the street.');
   alert('You walk towards the hotel.');
   alert('You see a someless guy, asking for money. His sign says \'Need Money for Kids.\'');
-  function donate1() {
   var donate = prompt('Do you [give money] or [do not?]').toLowerCase();
   if (donate == 'give money') {
     alert('You give the man 2 coins.');
@@ -148,10 +147,7 @@ function game5() {
     game6();
   } else {
     alert('Please use [give money] or [do not]!');
-    donate1();
   }
-}
-  donate1();
 }
 
 function game4() {
