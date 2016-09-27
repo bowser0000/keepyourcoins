@@ -134,7 +134,7 @@ function game5() {
   alert('Oh! I see! Your name is ' + nick + '!');
   alert('Welcome to our town, \'Mount Kajamakam!\' Hope you enjoy your stay!\" He gives you a pass to a hotel just down the street.');
   alert('You walk towards the hotel.');
-  alert('You see a someless guy, asking for money. His sign says \'Need Money for Kids.\'');
+  alert('You see a someless guy, asking for money. His sign says \'Need Money for Squids.\'');
   var donate = prompt('Do you [give money] or [do not?]').toLowerCase();
   if (donate == 'give money') {
     alert('You give the man 2 coins.');
