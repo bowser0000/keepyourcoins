@@ -70,6 +70,7 @@ function game7() {
       }
     } else if (isword == 'no') {
       alert('You decided not to buy the Iron Sword.');
+      game7();
     } else {
       alert('Please use [Yes] or [No]!');
       game7();
