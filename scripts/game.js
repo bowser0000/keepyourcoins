@@ -18,13 +18,13 @@ var kill2 = Math.random(); //Killing stranger
 var killwin = randomDamage(10, 15); //Money gained by killing him
 var route3a = Math.random();  //If dying in forest
 var weapon = 'Wooden Sword'; //Current Weapon (Default Wooden Sword)
-var coins = var1; //Coin Count (Default Starting COins (var1))
+var coins = var1; //Coin Count (Default Starting Coins (var1))
 var hp = 50; //Player HP
 var damage = 3; //Damage for weapon
 var fire = 0; //Extra Damage (Mr. Madden Sword only)
 var damagedone = damage + fire; //Damage dealt per turn
 var boss1hp = 25; //Dialva HP
-var boss1attack = 2; //Dialva attack damage
+var boss1attack = randomDamage(1, 2); //Dialva attack damage
 /* Weapon Damage
 Wooden Sword : 3
 Iron Sword : 5
@@ -42,8 +42,7 @@ var battlesmrmaddensword = 0;
 var totalbattles = 0; //Total Battles with every weapon
 
 function game8() {
-  alert('Work In Progress!');
-  throw new Error('Work in Progress!');
+  alert('');
 }
 
 function game7() {
@@ -308,6 +307,7 @@ function game() {
   //Get Harshan Sword
     if (name == 'Harshan') {
       weapon = 'Harshan Sword';
+      //Cancer Sword
       damage = 9999;
       game1();
     } else if (name == 'Mr. Madden') {
