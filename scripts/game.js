@@ -11,7 +11,7 @@ function randomDamage(min, max) {
 var var1 = randomDamage(1, 7); //Starting Coins
 var var2 = randomDamage(1, 3); //Coins in pants
 var path1a = Math.random(); //Finding monster
-var path1lose = Math.random(); //Losing money against monster
+var path1lose = Math.random(); //Losing fight against monster
 var xd123 = randomDamage(3, 7);  //Dropping coins by running
 var xd12344 = randomDamage(1, 5); //Finding coins by winning
 var kill2 = Math.random(); //Killing stranger
