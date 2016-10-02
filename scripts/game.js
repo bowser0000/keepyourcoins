@@ -42,7 +42,11 @@ var battlesmrmaddensword = 0;
 var totalbattles = 0; //Total Battles with every weapon
 
 function game8() {
-  alert('');
+  alert('You start to play around with your ' + weapon + '. You notice some small text near the handle.');
+  alert('"強さは人の幸運と、増加しています。"');
+  alert('You don\'t have time to translate it, so you just die.');
+  alert('This is the end! You ending with ' + coins + ' coins!');
+  throw new Error('That\'s all folks!');
 }
 
 function game7() {
@@ -127,25 +131,29 @@ function game6() {
 function game5() {
   alert('A man comes up to you, asking what your name is.');
   var nick = prompt('What do you say?');
-  alert('The man says \"Hello Eric!');
-  alert('Was that not your name?');
-  alert('What about Leric or Sheric?');
-  alert('Oh! I see! Your name is ' + nick + '!');
-  alert('Welcome to our town, \'Mount Kajamakam!\' Hope you enjoy your stay!\" He gives you a pass to a hotel just down the street.');
-  alert('You walk towards the hotel.');
-  alert('You see a someless guy, asking for money. His sign says \'Need Money for Squids.\'');
-  var donate = prompt('Do you [give money] or [do not?]').toLowerCase();
-  if (donate == 'give money') {
-    alert('You give the man 2 coins.');
-    alert('He replies with \'Hey bro. We\'re actually recording a video, bro. Social experiment, bro! Here\'s 10 coins because you donated, bro!');
-    coins = coins + 8;
-    alert('You have ' + coins + ' coin(s)!');
-    game6();
-  } else if (donate == 'do not') {
-    alert('You don\'t give the man any money. You don\'t even glance at him, trying not to make it more awkward.');
-    game6();
+  if (nick == 'John Cena') {
+    window.location = "https://www.niceme.me";
   } else {
-    alert('Please use [give money] or [do not]!');
+    alert('The man says \"Hello Eric!');
+    alert('Was that not your name?');
+    alert('What about Leric or Sheric?');
+    alert('Oh! I see! Your name is ' + nick + '!');
+    alert('Welcome to our town, \'Mount Kajamakam!\' Hope you enjoy your stay!\" He gives you a pass to a hotel just down the street.');
+    alert('You walk towards the hotel.');
+    alert('You see a someless guy, asking for money. His sign says \'Need Money for Squids.\'');
+    var donate = prompt('Do you [give money] or [do not?]').toLowerCase();
+    if (donate == 'give money') {
+      alert('You give the man 2 coins.');
+      alert('He replies with \'Hey bro. We\'re actually recording a video, bro. Social experiment, bro! Here\'s 10 coins because you donated, bro!');
+      coins = coins + 8;
+      alert('You have ' + coins + ' coin(s)!');
+      game6();
+    } else if (donate == 'do not') {
+      alert('You don\'t give the man any money. You don\'t even glance at him, trying not to make it more awkward.');
+      game6();
+    } else {
+      alert('Please use [give money] or [do not]!');
+    }
   }
 }
 
