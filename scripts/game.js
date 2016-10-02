@@ -22,7 +22,7 @@ var coins = var1; //Coin Count (Default Starting Coins (var1))
 var hp = 50; //Player HP
 var damage = 3; //Damage for weapon
 var fire = 0; //Extra Damage (Mr. Madden Sword only)
-var damagedone = damage + fire; //Damage dealt per turn
+//Damagedone variable at start of game1()
 var boss1hp = 25; //Dialva HP
 var boss1attack = randomDamage(1, 2); //Dialva attack damage
 /* Weapon Damage
@@ -243,6 +243,7 @@ function game2() {
 }
 
 function game1() {
+  var damagedone = damage + fire;
   alert('You wake up, and find ' + var1 + ' coin(s) on your bed!');
   alert('You now have ' + coins + ' coin(s)!');
   alert('You get out of bed and take a bath.');
