@@ -4,6 +4,13 @@
 /*jshint maxerr: 1000 */
 
 //Random Damage: To be added (Maybe after first boss?)
+
+//Max Coin While Loop
+while (coins > 999) {
+  coins = 999;
+}
+
+//Random Damage Variabe
 function randomDamage(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
@@ -41,12 +48,32 @@ var battlesharshansword = 0;
 var battlesmrmaddensword = 0;
 var totalbattles = 0; //Total Battles with every weapon
 
+game9() {
+  alert('That\'s the end! You ended with ' + coins + ' coins!');
+  throw new Error('That\'s all folks!');
+}
 function game8() {
   alert('You start to play around with your ' + weapon + '. You notice some small text near the handle.');
-  alert('"強さは人の幸運と、増加しています。"');
-  alert('You don\'t have time to translate it, so you just die.');
-  alert('This is the end! You ending with ' + coins + ' coins!');
-  throw new Error('That\'s all folks!');
+  alert('"あなたが成功した場合はるかに空白得ることができます。"');
+  alert('You don\'t have time to translate it, so you walk back up to your room.');
+  alert('"Man, this day was weird." you say.');
+  alert('You go back to sleep.');
+  var sleep1 = 50 - hp;
+  alert('You gained ' + sleep1 + ' HP!');
+  hp = 50;
+  alert('You wake up the next day. You remember the text on your sword and you go to Google Translate.');
+  alert('It\'s all normal, except for one part. It translates to \'You can get much more blank if you have success.\'');
+  var gain1 = prompt('Do you replace it with [Strength], [stamina] or [famous]?').toLowerCase();
+  if (gain1 == 'strength') {
+    damage = damage + 3;
+    game9();
+  } else if (gain1 == 'stamina') {
+    hp = hp + 10;
+    game9();
+  } else if (gain1 == 'famous') {
+    coins = coins + 20;
+    game9();
+  }
 }
 
 function game7() {
@@ -311,7 +338,7 @@ function game1() {
 
 function game() {
   //Instructions
-  alert('The goal of the game is to end with the most coins! The maximum amount you can get is 64.');
+  alert('The goal of the game is to end with the most coins! Try to get over 60!');
   alert('The game WILL close if you type something wrong. Capitals do not matter unless it is your name/nickname. Be careful when typing.');
   var name = prompt('What is your name?');
   //Get Harshan Sword
