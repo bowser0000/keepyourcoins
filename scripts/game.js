@@ -340,6 +340,7 @@ function game() {
   //Instructions
   alert('The goal of the game is to end with the most coins! Try to get over 60!');
   alert('The game WILL close if you type something wrong. Capitals do not matter unless it is your name/nickname. Be careful when typing.');
+  alert('Please report bugs to https://github.com/bowser0000/keepyourcoins/issues (This link is in the code.)');
   var name = prompt('What is your name?');
   //Get Harshan Sword
     if (name == 'Harshan') {
