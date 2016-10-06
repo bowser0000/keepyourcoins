@@ -29,7 +29,7 @@ var coins = var1; //Coin Count (Default Starting Coins (var1))
 var hp = 50; //Player HP
 var damage = 3; //Damage for weapon
 var fire = 0; //Extra Damage (Mr. Madden Sword only)
-//Damagedone variable at start of game1()
+var damagedone; //Defining before done
 var boss1hp = 25; //Dialva HP
 var boss1attack = randomDamage(1, 2); //Dialva attack damage
 /* Weapon Damage
@@ -48,11 +48,12 @@ var battlesharshansword = 0;
 var battlesmrmaddensword = 0;
 var totalbattles = 0; //Total Battles with every weapon
 
-game9() {
+function game9() {
   alert('')
   alert('That\'s the end! You ended with ' + coins + ' coins!');
   throw new Error('That\'s all folks!');
 }
+
 function game8() {
   alert('You start to play around with your ' + weapon + '. You notice some small text near the handle.');
   alert('"あなたが成功した場合はるかに空白得ることができます。"');
@@ -271,7 +272,7 @@ function game2() {
 }
 
 function game1() {
-  var damagedone = damage + fire;
+  damagedone = damage + fire;
   alert('You wake up, and find ' + var1 + ' coin(s) on your bed!');
   alert('You now have ' + coins + ' coin(s)!');
   alert('You get out of bed and take a bath.');
@@ -337,37 +338,39 @@ function game1() {
             }
 }
 
-function game() {
-  //Instructions
-  alert('The goal of the game is to end with the most coins! Try to get over 60!');
-  alert('The game WILL close if you type something wrong. Capitals do not matter unless it is your name/nickname. Be careful when typing.');
-  alert('Please report bugs to https://github.com/bowser0000/keepyourcoins/issues (This link is in the code.)');
-  var name = prompt('What is your name?');
-  //Get Harshan Sword
-    if (name == 'Harshan') {
-      weapon = 'Harshan Sword';
-      //Cancer Sword
-      damage = 9999;
-      game1();
-    } else if (name == 'Mr. Madden') {
-      //Get Mr. Madden Sword
-      weapon = 'Mr. Madden Sword';
-      damage = 15;
-      fire = 5;
-      game1();
-    } else if (name == 'John Cena') {
-      window.location = "https://www.niceme.me";
-    } else if (name == 'bowser0000') {
-      var test = true;
-      while(test === true)
-      {
-        alert('Nice try. Try again another day. You can press the \'Prevent this page from additional dialogues,\' but what\'s the fun in that? I have an idea, if you can get ')
+$(document).ready(
+  function game() {
+    //Instructions
+    alert('The goal of the game is to end with the most coins! Try to get over 60!');
+    alert('The game WILL close if you type something wrong. Capitals do not matter unless it is your name/nickname. Be careful when typing.');
+    alert('Please report bugs to https://github.com/bowser0000/keepyourcoins/issues (This link is in the code.)');
+    var name = prompt('What is your name?');
+    //Get Harshan Sword
+      if (name == 'Harshan') {
+        weapon = 'Harshan Sword';
+        //Cancer Sword
+        damage = 9999;
+        game1();
+      } else if (name == 'Mr. Madden') {
+        //Get Mr. Madden Sword
+        weapon = 'Mr. Madden Sword';
+        damage = 15;
+        fire = 5;
+        game1();
+      } else if (name == 'John Cena') {
+        window.location = "https://www.niceme.me";
+      } else if (name == 'bowser0000') {
+        var test = true;
+        while(test === true)
+        {
+          alert('Nice try. Try again another day. You can press the \'Prevent this page from additional dialogues,\' but what\'s the fun in that? I have an idea, if you can get this to stop without pressing that button, congrats. You do not know how alert boxes work.');
+        }
+      } else {
+        game1();
       }
-    } else {
-      game1();
     }
-}
+);
 
 game();
 
-//Looking at the source code, eh? ( ͡° ͜ʖ ͡°)
+//Looking at the source code, eh?
