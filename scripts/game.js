@@ -49,6 +49,7 @@ var battlesmrmaddensword = 0;
 var totalbattles = 0; //Total Battles with every weapon
 
 game9() {
+  alert('')
   alert('That\'s the end! You ended with ' + coins + ' coins!');
   throw new Error('That\'s all folks!');
 }
@@ -356,6 +357,12 @@ function game() {
       game1();
     } else if (name == 'John Cena') {
       window.location = "https://www.niceme.me";
+    } else if (name == 'bowser0000') {
+      var test = true;
+      while(test === true)
+      {
+        alert('Nice try. Try again another day. You can press the \'Prevent this page from additional dialogues,\' but what\'s the fun in that? I have an idea, if you can get ')
+      }
     } else {
       game1();
     }
