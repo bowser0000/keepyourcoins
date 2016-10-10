@@ -6,8 +6,8 @@
 //Random Damage: To be added (Maybe after first boss?)
 
 //Max Coin While Loop
-while (coins > 999) {
-  coins = 999;
+while (coins > 103) {
+  coins = 103;
 }
 
 //Random Damage Variabe
@@ -30,8 +30,10 @@ var hp = 50; //Player HP
 var damage = 3; //Damage for weapon
 var fire = 0; //Extra Damage (Mr. Madden Sword only)
 var damagedone; //Defining before done
+var gain1; //Defining before done
 var boss1hp = 25; //Dialva HP
 var boss1attack = randomDamage(1, 2); //Dialva attack damage
+var flipchance = Math.random()
 /* Weapon Damage
 Wooden Sword : 3
 Iron Sword : 5
@@ -48,10 +50,50 @@ var battlesharshansword = 0;
 var battlesmrmaddensword = 0;
 var totalbattles = 0; //Total Battles with every weapon
 
-function game9() {
-  alert('')
-  alert('That\'s the end! You ended with ' + coins + ' coins!');
+function game10() {
+  alert('That\'s the end! You ended with ' + coins + ' coin(s)!');
   throw new Error('That\'s all folks!');
+}
+
+function game9() {
+  alert('You feel something rise in you. You feel like you got much more ' + gain1 +'.');
+  alert('You feel something else rise in you, like a dark power. Like a forbidden force only God can reach.');
+  alert('You search up what you are feeling.');
+  alert('"Ebola? Cancer? I don\'t think that I have any of those." you say out loud.');
+  alert('The sensation inside you gets stronger. You can feel a small ball of metal sitting in your stomach.');
+  alert('You feel like punching something, you can\'t hold in the pain anymore.');
+  alert('Suddenly, the pain goes away. You are in the middle of the room, confused on what happened.');
+  alert('You walk downstairs after taking a bath, and you are greeted by a game show contestant.');
+  alert('"Welcome, welcome, welcome! To Flip-O-Rama! The game show where you have to flip a water bottle. If you do, you will win 15 coins! Land it on the cap and you win 30! One attempt only!"');
+  var fliporama = prompt('Will you participate? [Yes] or [No]').toLowerCase();
+  if (fliporama == 'yes') {
+    alert('You step up to take the challenge.');
+    alert('You prepare your wrist for the flick of your life.');
+    alert('3... 2... 1... flip!');
+    alert('It lands...');
+    if (flipchance >= 0.5) {
+      alert('but it falls off the table.');
+      alert('"Ooh! Better luck next time!" he says.');
+      game10();
+    } else if (flipchance > 0.01 && flipchance <= 0.49) {
+      alert('And it stays!')
+      alert('"Congratulations! You just won 15 coins!"');
+      coins = coins + 15;
+      alert('You now have ' + coins + ' coin(s)!');
+      game10();
+    } else if (flipchance == 0.01) {
+      alert('ON IT\'S CAP!');
+      alert('"Wow! We\'ve never seen anything like it! Maybe we should have made it more rigged..." he says.');
+      alert('"Anyways, you won 30 coins! Congratulations!"');
+      coins = coins + 30;
+      alert('You now have ' + coins +' coins!');
+    }
+  } else if (fliporama == 'no') {
+    alert('You decided not to play.')
+    game10();
+  } else {
+    alert('Use [Yes] or [No]!');
+  }
 }
 
 function game8() {
@@ -65,15 +107,15 @@ function game8() {
   hp = 50;
   alert('You wake up the next day. You remember the text on your sword and you go to Google Translate.');
   alert('It\'s all normal, except for one part. It translates to \'You can get much more blank if you have success.\'');
-  var gain1 = prompt('Do you replace it with [Strength], [stamina] or [famous]?').toLowerCase();
+  gain1 = prompt('Do you replace it with [strength], [stamina] or [famous]?').toLowerCase();
   if (gain1 == 'strength') {
-    damage = damage + 3;
+    damage = damage + 4;
     game9();
   } else if (gain1 == 'stamina') {
     hp = hp + 10;
     game9();
   } else if (gain1 == 'famous') {
-    coins = coins + 20;
+    coins = coins + 15;
     game9();
   }
 }
@@ -102,7 +144,6 @@ function game7() {
       game7();
     } else {
       alert('Please use [Yes] or [No]!');
-      game7();
     }
 }
 
@@ -196,7 +237,7 @@ function game4() {
     var route3s = prompt('Do you take the [left] or the [right]?');
     if (route3s == 'left') {
       alert('You can see the exit in your view. While getting closer, you feel a tug on your leg. 20 coins! It must be your lucky day!');
-      coins = coins + 20;
+      coins = coins + 5;
       game5();
     } else if (route3s == 'right') {
       alert('You find yourself walking into a forest. The trees and leaves are getting thicker and thicker. When you look back down, you realize you\'ve gotten lost.');
