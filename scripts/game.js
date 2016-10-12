@@ -97,6 +97,7 @@ function game9() {
       alert('You now have ' + coins +' coins!');
     }
   } else if (fliporama == 'no') {
+    alert('You decided not to play.');
     game10();
   } else {
     alert('Use [Yes] or [No]!');
