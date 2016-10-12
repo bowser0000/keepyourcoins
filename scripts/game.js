@@ -33,7 +33,8 @@ var damagedone; //Defining before done
 var gain1; //Defining before done
 var boss1hp = 25; //Dialva HP
 var boss1attack = randomDamage(1, 2); //Dialva attack damage
-var flipchance = Math.random()
+var flipchance = Math.random();
+var powerlevel = 5;
 /* Weapon Damage
 Wooden Sword : 3
 Iron Sword : 5
@@ -51,6 +52,13 @@ var battlesmrmaddensword = 0;
 var totalbattles = 0; //Total Battles with every weapon
 
 function game10() {
+  alert('Everyday seems to get weirder and weirder. You wonder what will happen on the day of your death.');
+  alert('You suddenly feel the same pain you had before.');
+  alert('You look above you.');
+  alert('There\'s some floating text above you, which looks kind of holographic.');
+  alert('It says \'Power Level: 5.\'');
+  alert('The text suddenly wisps away.');
+  alert('');
   alert('That\'s the end! You ended with ' + coins + ' coin(s)!');
   throw new Error('That\'s all folks!');
 }
@@ -71,12 +79,12 @@ function game9() {
     alert('You prepare your wrist for the flick of your life.');
     alert('3... 2... 1... flip!');
     alert('It lands...');
-    if (flipchance >= 0.5) {
+    if (flipchance >= 0.25) {
       alert('but it falls off the table.');
       alert('"Ooh! Better luck next time!" he says.');
       game10();
-    } else if (flipchance > 0.01 && flipchance <= 0.49) {
-      alert('And it stays!')
+    } else if (flipchance > 0.01 && flipchance <= 0.24) {
+      alert('And it stays!');
       alert('"Congratulations! You just won 15 coins!"');
       coins = coins + 15;
       alert('You now have ' + coins + ' coin(s)!');
@@ -89,7 +97,6 @@ function game9() {
       alert('You now have ' + coins +' coins!');
     }
   } else if (fliporama == 'no') {
-    alert('You decided not to play.')
     game10();
   } else {
     alert('Use [Yes] or [No]!');
@@ -389,11 +396,9 @@ $(document).ready(
     //Get Harshan Sword
       if (name == 'Harshan') {
         weapon = 'Harshan Sword';
-        //Cancer Sword
         damage = 9999;
         game1();
       } else if (name == 'Mr. Madden') {
-        //Get Mr. Madden Sword
         weapon = 'Mr. Madden Sword';
         damage = 15;
         fire = 5;
