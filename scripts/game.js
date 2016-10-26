@@ -33,8 +33,8 @@ var damagedone; //Defining before done
 var gain1; //Defining before done
 var boss1hp = 25; //Dialva HP
 var boss1attack = randomDamage(1, 2); //Dialva attack damage
-var flipchance = Math.random();
-var powerlevel = 5;
+var flipchance = Math.random(); //Flip-O-Rama Flip Chance
+var powerlevel = 5; //Power Level (Increases damage by 1 every multiple of 10)
 /* Weapon Damage
 Wooden Sword : 3
 Iron Sword : 5
@@ -149,7 +149,7 @@ function game7() {
       }
     } else if (isword == 'no') {
       alert('You decided not to buy the Iron Sword.');
-      game7();
+      game8();
     } else {
       alert('Please use [Yes] or [No]!');
     }
