@@ -18,12 +18,11 @@ function randomDamage(min, max) {
 var var1 = randomDamage(1, 7); //Starting Coins
 var var2 = randomDamage(1, 3); //Coins in pants
 var path1a = Math.random(); //Finding monster
-var path1lose = Math.random(); //Losing fight against monster
-var xd123 = randomDamage(3, 7);  //Dropping coins by running
+var path1lose = Math.random(); //Determining if you lose or win coins
+var xd123 = randomDamage(3, 7);  //Dropping coins by running/winning
 var xd12344 = randomDamage(1, 5); //Finding coins by winning
 var kill2 = Math.random(); //Killing stranger
 var killwin = randomDamage(10, 15); //Money gained by killing him
-var route3a = Math.random();  //If dying in forest
 var weapon = 'Wooden Sword'; //Current Weapon (Default Wooden Sword)
 var coins = var1; //Coin Count (Default Starting Coins (var1))
 var hp = 50; //Player HP
@@ -56,9 +55,17 @@ function game10() {
   alert('You suddenly feel the same pain you had before.');
   alert('You look above you.');
   alert('There\'s some floating text above you, which looks kind of holographic.');
-  alert('It says \'Power Level: 5.\'');
+  alert('It says \'Power Level: ' + powerlevel + '.\'');
   alert('The text suddenly wisps away.');
-  alert('');
+  alert('You suddenly get extremely hungry. You rush to the nearest Clucken Bell to have two number 9s, a number 9 large, a number 6 with extra dip, a number 7, two numbers 45s, one with cheese, and a large soda.');
+  alert('You get your order and you eat it very quickly.');
+  alert('The text wisps back, but the number is different.');
+  powerlevel = powerlevel + 5;
+  alert('It says \'Power Level: ' powerlevel '.\'');
+  alert('Some new text appears under those words.');
+  alert('Damage: ' + damage' + 1.');
+  damage = damage + 1;
+  alert('Damage: ' + damage + '.');
   alert('That\'s the end! You ended with ' + coins + ' coin(s)!');
   throw new Error('That\'s all folks!');
 }
@@ -303,20 +310,26 @@ function game2() {
   alert('The shop keeper tells you \'Hey, go kill that guy over there with that sword, and I\'ll give you a few coins ;)\'');
   var kill = prompt('Do you [kill him] or [do not]?').toLowerCase();
   if (kill == 'kill him') {
-    if (kill2 >= 0.5) {
-      alert('The guy manages to fight back, and kills you.');
-      alert('You ended with ' + coins + ' coin(s)!');
-      throw new Error ('You died!');
-    } else {
-      alert('You kill him, and the shop keeper gives you ' + killwin + ' coins!');
+    if (weapon == 'Harshan Sword') {
+      alert('Your Harshan Sword rips him in half, and the shop keeper gives you ' + killwin + ' coins!');
       coins = coins + killwin;
       game3();
+    } else {
+      if (kill2 >= 0.5) {
+        alert('The guy manages to fight back, and kills you.');
+        alert('You ended with ' + coins + ' coin(s)!');
+        throw new Error ('You died!');
+      } else {
+        alert('You kill him, and the shop keeper gives you ' + killwin + ' coins!');
+        coins = coins + killwin;
+        game3();
+      }
+    } else if (kill == 'do not') {
+      alert('You don\'t kill him, and the shopkeeper gives you no coins.');
+      game3();
+    } else {
+      alert('Use [kill him] or [do not]!');
     }
-  } else if (kill == 'do not') {
-    alert('You don\'t kill him, and the shopkeeper gives you no coins.');
-    game3();
-  } else {
-    alert('Use [kill him] or [do not]!');
   }
 }
 
