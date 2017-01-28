@@ -4,13 +4,10 @@
 /*jshint maxerr: 1000 */
 
 //Random Damage: To be added (Maybe after first boss?)
-
-//Max Coin While Loop
-while (coins > 103) {
-  coins = 103;
-}
-
 //Random Damage Variabe
+
+//Every 5 HP is 1 power level
+//Every 2 HP is 1 coin
 function randomDamage(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
@@ -34,6 +31,7 @@ var boss1hp = 25; //Dialva HP
 var boss1attack = randomDamage(1, 2); //Dialva attack damage
 var flipchance = Math.random(); //Flip-O-Rama Flip Chance
 var powerlevel = 5; //Power Level (Increases damage by 1 every multiple of 10)
+var forcedmonster1hp = 15
 /* Weapon Damage
 Wooden Sword : 3
 Iron Sword : 5
@@ -49,6 +47,11 @@ var battlesemeraldsword = 0;
 var battlesharshansword = 0;
 var battlesmrmaddensword = 0;
 var totalbattles = 0; //Total Battles with every weapon
+
+function game11(){
+  alert('That\'s the end! You ended with ' + coins + ' coin(s)!');
+  throw new Error('That\'s all folks!');
+}
 
 function game10() {
   alert('Everyday seems to get weirder and weirder. You wonder what will happen on the day of your death.');
@@ -66,8 +69,41 @@ function game10() {
   alert('Damage: ' + damage' + 1.');
   damage = damage + 1;
   alert('Damage: ' + damage + '.');
-  alert('That\'s the end! You ended with ' + coins + ' coin(s)!');
-  throw new Error('That\'s all folks!');
+  alert('You wonder about the power level.');
+  alert('You try asking the people around you, but they don\'t seem to want to answer. One even kicks you in the head.');
+  alert('It seems like everbody is trying to distance themselves away from you.');
+  alert('You kick a hobo.'); //Please don't kick a hobo in real life.
+  alert('He starts speaking in gibberish, until you can start to make out some words.');
+  alert('Every... fniefmwimfw imwf... five power level... vkjnejfeklfmdew... gives you one damage... fweufnwkfnwoijfw');
+  alert('You thank him and run off.');
+  alert('You run home, and immediatly Google how to gain power level.');
+  alert('It says your search did not match any documents.');
+  alert('It looks like you\'re the only one who has experianced this.');
+  alert('As you get off your computer, you walk out of your room and downstais.');
+  alert('A monster appears, but you can only make out the silhouette of the figure.');
+  alert('You lunge at it with your ' + weapon +'.');
+  function forcedmonsterone() {
+    var forcedmonster1 = prompt('Do you [run] or [attack]?').toLowerCase();
+    if (forcedmonster1 == 'run') {
+      alert('You run away, but you do not gain power level or coins.');
+      game11();
+    } else if (forcedmonster1 == 'attack') {
+      alert('You attack the monster.')
+      forcedmonster1hp = forcedmonster1hp - damage;
+      alert('The monster has ' + forcedmonster1hp + ' left.');
+      if (forcedmonster1hp <= 0) {
+        alert('You beat the monster!');
+        alert('You gained three power level and seven coins!');
+        powerlevel = powerlevel + 3;
+        coins = coins + 7;
+        game11();
+      } else {
+        forcedmonster1hp();
+      }
+    } else {
+      alert('Please use [run] or [attack]!');
+    }
+  }
 }
 
 function game9() {
