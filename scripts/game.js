@@ -6,8 +6,8 @@
 //Random Damage: To be added (Maybe after first boss?)
 //Random Damage Variabe
 
-//Every 5 HP is 1 power level
-//Every 2 HP is 1 coin
+//Every 5 HP is 1-2 power level
+//Every 2 HP is 0-1 coin
 function randomDamage(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
@@ -49,6 +49,7 @@ var battlesmrmaddensword = 0;
 var totalbattles = 0; //Total Battles with every weapon
 
 function game11(){
+  alert('');
   alert('That\'s the end! You ended with ' + coins + ' coin(s)!');
   throw new Error('That\'s all folks!');
 }
