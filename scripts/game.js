@@ -48,6 +48,14 @@ var battlesharshansword = 0;
 var battlesmrmaddensword = 0;
 var totalbattles = 0; //Total Battles with every weapon
 
+function checkPowerLevel(){
+  if(powerlevel % 10 === 0) {
+    damage = damage + 1;
+    alert('You have gained one attack damage.');
+  } else {
+  }
+}
+
 function game11(){
   alert('');
   alert('That\'s the end! You ended with ' + coins + ' coin(s)!');
@@ -78,9 +86,9 @@ function game10() {
   alert('Every... fniefmwimfw imwf... five power level... vkjnejfeklfmdew... gives you one damage... fweufnwkfnwoijfw');
   alert('You thank him and run off.');
   alert('You run home, and immediatly Google how to gain power level.');
-  alert('It says your search did not match any documents.');
+  alert('Some stupid game called Trove shows up.');
   alert('It looks like you\'re the only one who has experianced this.');
-  alert('As you get off your computer, you walk out of your room and downstais.');
+  alert('As you get off your computer, you walk out of your room and downstairs.');
   alert('A monster appears, but you can only make out the silhouette of the figure.');
   alert('You lunge at it with your ' + weapon +'.');
   function forcedmonsterone() {
@@ -460,7 +468,7 @@ $(document).ready(
         var test = true;
         while(test === true)
         {
-          alert('Nice try. Try again another day. You can press the \'Prevent this page from additional dialogues,\' but what\'s the fun in that? I have an idea, if you can get this to stop without pressing that button, congrats. You do not know how alert boxes work.');
+          alert('Nice try. Try again another day. You can press the \'Prevent this page from additional dialogues,\' but what\'s the fun in that? I have an idea, if you can get through these 1000 messages, I will give you a sword that does 1 billion damage, adds 1 billion health and adds 10 billion coins. Good luck.');
         }
       } else {
         game1();
@@ -471,3 +479,17 @@ $(document).ready(
 game();
 
 //Looking at the source code, eh?
+/*      D O W N V O T E D
+      / O             / O
+    /   W           /   W
+  /     N         /     N
+D O W N V O T E D       V
+O       O       O       O
+W       T       W       T
+N       E       N       E
+V       D O W N V O T E D
+O     /         O     /
+T   /           T   /
+E /             E /
+D O W N V O T E D
+*/
