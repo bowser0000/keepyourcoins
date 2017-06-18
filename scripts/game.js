@@ -31,6 +31,7 @@ var boss1hp = 25; //Dialva HP
 var boss1attack = randomDamage(1, 2); //Dialva attack damage
 var flipchance = Math.random(); //Flip-O-Rama Flip Chance
 var powerlevel = 5; //Power Level (Increases damage by 1 every multiple of 10)
+var basedamage = 0;
 var forcedmonster1hp = 15
 /* Weapon Damage
 Wooden Sword : 3
@@ -76,7 +77,7 @@ function game10() {
   alert('It says \'Power Level: ' powerlevel '.\'');
   alert('Some new text appears under those words.');
   alert('Damage: ' + damage' + 1.');
-  damage = damage + 1;
+  basedamage = basedamage + 1;
   alert('Damage: ' + damage + '.');
   alert('You wonder about the power level.');
   alert('You try asking the people around you, but they don\'t seem to want to answer. One even kicks you in the head.');
@@ -169,7 +170,7 @@ function game8() {
   alert('It\'s all normal, except for one part. It translates to \'You can get much more blank if you have success.\'');
   gain1 = prompt('Do you replace it with [strength], [stamina] or [famous]?').toLowerCase();
   if (gain1 == 'strength') {
-    damage = damage + 4;
+    basedamage = basedamage + 4;
     game9();
   } else if (gain1 == 'stamina') {
     hp = hp + 10;
@@ -379,7 +380,7 @@ function game2() {
 }
 
 function game1() {
-  damagedone = damage + fire;
+  damagedone = damage + fire + basedamage;
   alert('You wake up, and find ' + var1 + ' coin(s) on your bed!');
   alert('You now have ' + coins + ' coin(s)!');
   alert('You get out of bed and take a bath.');
@@ -479,17 +480,3 @@ $(document).ready(
 game();
 
 //Looking at the source code, eh?
-/*      D O W N V O T E D
-      / O             / O
-    /   W           /   W
-  /     N         /     N
-D O W N V O T E D       V
-O       O       O       O
-W       T       W       T
-N       E       N       E
-V       D O W N V O T E D
-O     /         O     /
-T   /           T   /
-E /             E /
-D O W N V O T E D
-*/
