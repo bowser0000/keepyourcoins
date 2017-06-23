@@ -58,7 +58,7 @@ function checkPowerLevel(){
 }
 
 function game11(){
-  alert('');
+  alert('To be continued...');
   alert('That\'s the end! You ended with ' + coins + ' coin(s)!');
   throw new Error('That\'s all folks!');
 }
