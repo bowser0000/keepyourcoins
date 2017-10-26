@@ -32,7 +32,8 @@ var boss1attack = randomDamage(1, 2); //Dialva attack damage
 var flipchance = Math.random(); //Flip-O-Rama Flip Chance
 var powerlevel = 5; //Power Level (Increases damage by 1 every multiple of 10)
 var basedamage = 0;
-var forcedmonster1hp = 15
+var forcedmonster1hp = 15;
+var route3a = Math.random();
 /* Weapon Damage
 Wooden Sword : 3
 Iron Sword : 5
@@ -58,7 +59,7 @@ function checkPowerLevel(){
 }
 
 function game11(){
-  alert('To be continued...');
+  alert('');
   alert('That\'s the end! You ended with ' + coins + ' coin(s)!');
   throw new Error('That\'s all folks!');
 }
@@ -74,9 +75,9 @@ function game10() {
   alert('You get your order and you eat it very quickly.');
   alert('The text wisps back, but the number is different.');
   powerlevel = powerlevel + 5;
-  alert('It says \'Power Level: ' powerlevel '.\'');
+  alert('It says \'Power Level: ' + powerlevel + '.\'');
   alert('Some new text appears under those words.');
-  alert('Damage: ' + damage' + 1.');
+  alert('Damage: ' + damage + ' + 1.');
   basedamage = basedamage + 1;
   alert('Damage: ' + damage + '.');
   alert('You wonder about the power level.');
@@ -98,7 +99,7 @@ function game10() {
       alert('You run away, but you do not gain power level or coins.');
       game11();
     } else if (forcedmonster1 == 'attack') {
-      alert('You attack the monster.')
+      alert('You attack the monster.');
       forcedmonster1hp = forcedmonster1hp - damage;
       alert('The monster has ' + forcedmonster1hp + ' left.');
       if (forcedmonster1hp <= 0) {
@@ -360,24 +361,22 @@ function game2() {
       alert('Your Harshan Sword rips him in half, and the shop keeper gives you ' + killwin + ' coins!');
       coins = coins + killwin;
       game3();
-    } else {
-      if (kill2 >= 0.5) {
+    } else if (kill2 >= 0.5) {
         alert('The guy manages to fight back, and kills you.');
         alert('You ended with ' + coins + ' coin(s)!');
         throw new Error ('You died!');
-      } else {
+      } else if(kill == 'do not') {
+      alert('You don\'t kill him, and the shopkeeper gives you no coins.');
+      game3();
+      } else if(kill2 <= 0.5) {
         alert('You kill him, and the shop keeper gives you ' + killwin + ' coins!');
         coins = coins + killwin;
         game3();
       }
-    } else if (kill == 'do not') {
-      alert('You don\'t kill him, and the shopkeeper gives you no coins.');
-      game3();
     } else {
       alert('Use [kill him] or [do not]!');
     }
   }
-}
 
 function game1() {
   damagedone = damage + fire + basedamage;
