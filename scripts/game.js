@@ -54,9 +54,11 @@ var totalbattles = 0; //Total Battles with every weapon
 
 window.setInterval(function checkPowerLevel(){
   plsubtract = Math.floor(realpowerlevel / 10)
-  damage = damage + plsubtract;
-  realpowerlevel = realpowerlevel - plsubtract
-  alert('You have gained one attack damage.');
+  if(plsubtract > 1) {
+    damage = damage + plsubtract;
+    realpowerlevel = realpowerlevel - plsubtract
+    alert('You have gained one attack damage.');
+  }
 }, 100);
 
 function game11(){
