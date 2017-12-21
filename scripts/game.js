@@ -31,7 +31,8 @@ var boss1hp = 25; //Dialva HP
 var boss1attack = randomDamage(1, 2); //Dialva attack damage
 var flipchance = Math.random(); //Flip-O-Rama Flip Chance
 var powerlevel = 5; //Power Level (Increases damage by 1 every multiple of 10)
-var realpowerlevel = 5; //Power Level which will reset to 0 after every damage increase.
+var realpowerlevel = powerlevel; //Power Level which will reset to 0 after every damage increase.
+var plsubtract;
 var basedamage = 0;
 var forcedmonster1hp = 15;
 var route3a = Math.random();
@@ -52,13 +53,11 @@ var battlesmrmaddensword = 0;
 var totalbattles = 0; //Total Battles with every weapon
 
 window.setInterval(function checkPowerLevel(){
-  if(powerlevel % 10 === 0) {
-    damage = damage + 1;
-    realpowerlevel = 0
-    alert('You have gained one attack damage.');
-  } else {
-  }
-}, 1000);
+  plsubtract = Math.floor(realpowerlevel / 10)
+  damage = damage + plsubtract;
+  realpowerlevel = realpowerlevel - plsubtract
+  alert('You have gained one attack damage.');
+}, 100);
 
 function game11(){
   alert('That\'s the end! You ended with ' + coins + ' coin(s)!');
@@ -76,6 +75,7 @@ function game10() {
   alert('You get your order and you eat it very quickly.');
   alert('The text wisps back, but the number is different.');
   powerlevel = powerlevel + 5;
+  realpowerlevel = realpowerlevel + 5;
   alert('It says \'Power Level: ' + powerlevel + '.\'');
   alert('Some new text appears under those words.');
   alert('Damage: ' + damage + ' + 1.');
@@ -107,6 +107,7 @@ function game10() {
         alert('You beat the monster!');
         alert('You gained three power level and seven coins!');
         powerlevel = powerlevel + 3;
+        realpowerlevel = realpowerlevel + 3;
         coins = coins + 7;
         game11();
       } else {
@@ -476,7 +477,5 @@ $(document).ready(
       }
     }
 );
-
-game();
 
 //Looking at the source code, eh?
