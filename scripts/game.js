@@ -31,7 +31,7 @@ var boss1hp = 25; //Dialva HP
 var boss1attack = randomDamage(1, 2); //Dialva attack damage
 var flipchance = Math.random(); //Flip-O-Rama Flip Chance
 var powerlevel = 5; //Power Level (Increases damage by 1 every multiple of 10)
-var realpowerlevel = powerlevel; //Power Level which will reset to 0 after every damage increase.
+var realpowerlevel = 5; //Power Level which will reset to 0 after every damage increase.
 var plsubtract;
 var basedamage = 0;
 var forcedmonster1hp = 15;
@@ -53,10 +53,10 @@ var battlesmrmaddensword = 0;
 var totalbattles = 0; //Total Battles with every weapon
 
 window.setInterval(function checkPowerLevel(){
-  plsubtract = Math.floor(realpowerlevel / 10)
-  if(plsubtract > 1) {
+  plsubtract = Math.floor(realpowerlevel / 10);
+  if(plsubtract >= 1) {
     damage = damage + plsubtract;
-    realpowerlevel = realpowerlevel - plsubtract
+    realpowerlevel = realpowerlevel - plsubtract;
     alert('You have gained one attack damage.');
   }
 }, 100);
@@ -119,6 +119,7 @@ function game10() {
       alert('Please use [run] or [attack]!');
     }
   }
+  forcedmonsterone();
 }
 
 function game9() {
