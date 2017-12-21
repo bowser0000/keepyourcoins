@@ -31,6 +31,7 @@ var boss1hp = 25; //Dialva HP
 var boss1attack = randomDamage(1, 2); //Dialva attack damage
 var flipchance = Math.random(); //Flip-O-Rama Flip Chance
 var powerlevel = 5; //Power Level (Increases damage by 1 every multiple of 10)
+var realpowerlevel = 5; //Power Level which will reset to 0 after every damage increase.
 var basedamage = 0;
 var forcedmonster1hp = 15;
 var route3a = Math.random();
@@ -50,13 +51,14 @@ var battlesharshansword = 0;
 var battlesmrmaddensword = 0;
 var totalbattles = 0; //Total Battles with every weapon
 
-function checkPowerLevel(){
+window.setInterval(function checkPowerLevel(){
   if(powerlevel % 10 === 0) {
     damage = damage + 1;
+    realpowerlevel = 0
     alert('You have gained one attack damage.');
   } else {
   }
-}
+}, 1000);
 
 function game11(){
   alert('');
