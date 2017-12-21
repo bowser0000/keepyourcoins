@@ -56,6 +56,7 @@ window.setInterval(function checkPowerLevel(){
   plsubtract = Math.floor(realpowerlevel / 10);
   if(plsubtract >= 1) {
     damage = damage + plsubtract;
+    plsubtract = plsubtract * 10;
     realpowerlevel = realpowerlevel - plsubtract;
     alert('You have gained one attack damage.');
   }
