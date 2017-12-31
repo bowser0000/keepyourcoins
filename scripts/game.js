@@ -52,7 +52,8 @@ var battlesharshansword = 0;
 var battlesmrmaddensword = 0;
 var totalbattles = 0; //Total Battles with every weapon
 
-window.setInterval(function checkPowerLevel(){
+//TODO Fix this
+/*window.setTimeout(function checkPowerLevel(){
   plsubtract = Math.floor(realpowerlevel / 10);
   if(plsubtract >= 1) {
     damage = damage + plsubtract;
@@ -60,7 +61,7 @@ window.setInterval(function checkPowerLevel(){
     realpowerlevel = realpowerlevel - plsubtract;
     alert('You have gained one attack damage.');
   }
-}, 100);
+}, 100);*/
 
 function game11(){
   alert('That\'s the end! You ended with ' + coins + ' coin(s)!');
