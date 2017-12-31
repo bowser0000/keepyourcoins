@@ -482,4 +482,6 @@ $(document).ready(
     }
 );
 
+game();
+
 //Looking at the source code, eh?
