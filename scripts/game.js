@@ -4,7 +4,7 @@
 /*jshint maxerr: 1000 */
 
 //Random Damage: To be added (Maybe after first boss?)
-//Random Damage Variabe
+//Random Damage Variable
 
 //Every 5 HP is 1-2 power level
 //Every 2 HP is 0-1 coin
@@ -63,7 +63,7 @@ var totalbattles = 0; //Total Battles with every weapon
   }
 }, 100);*/
 
-function game11(){
+function game11() {
   alert('That\'s the end! You ended with ' + coins + ' coin(s)!');
   throw new Error('That\'s all folks!');
 }
@@ -473,9 +473,9 @@ $(document).ready(
         window.location = "https://www.niceme.me";
       } else if (name == 'bowser0000') {
         var test = true;
-        while(test === true)
+        while (test === true)
         {
-          alert('Nice try. Try again another day. You can press the \'Prevent this page from additional dialogues,\' but what\'s the fun in that? I have an idea, if you can get through these 1000 messages, I will give you a sword that does 1 billion damage, adds 1 billion health and adds 10 billion coins. Good luck.');
+          alert('Nice try. Try again another day. You can press the \'Prevent this page from additional dialogues,\' but what\'s the fun in that? I have an idea, if you can get through these finite number of messages, I will give you a sword that does something cool. Good luck.');
         }
       } else {
         game1();
