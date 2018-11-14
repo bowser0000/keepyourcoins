@@ -380,9 +380,12 @@ function game2() {
         coins = coins + killwin;
         game3();
       }
-    } else {
-      alert('Use [kill him] or [do not]!');
-    }
+  } else if (kill == 'do not') {
+    alert('You decided not to kill him.');
+    game3();
+  } else {
+    alert('Use [kill him] or [do not]!');
+  }
   }
 
 function game1() {
