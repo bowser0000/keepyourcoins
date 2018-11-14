@@ -452,8 +452,7 @@ function game1() {
             }
 }
 
-$(document).ready(
-  function game() {
+function game() {
     //Instructions
     alert('The goal of the game is to end with the most coins! Try to get over 60!');
     alert('The game WILL close if you type something wrong. Capitals do not matter unless it is your name/nickname. Be careful when typing.');
@@ -481,7 +480,6 @@ $(document).ready(
         game1();
       }
     }
-);
 
 game();
 
