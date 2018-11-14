@@ -379,6 +379,7 @@ function game2() {
     } else if(kill == 'do not') {
       alert('You don\'t kill him, and the shopkeeper gives you no coins.');
       game3();
+<<<<<<< HEAD
     } else if(kill2 <= 0.5) {
       alert('You kill him, and the shop keeper gives you ' + killwin + ' coins!');
       coins = coins + killwin;
@@ -389,6 +390,19 @@ function game2() {
     game3();
   } else {
     alert('Use [kill him] or [do not]!');
+=======
+      } else if(kill2 <= 0.5) {
+        alert('You kill him, and the shop keeper gives you ' + killwin + ' coins!');
+        coins = coins + killwin;
+        game3();
+      }
+  } else if (kill == 'do not') {
+    alert('You decided not to kill him.');
+    game3();
+  } else {
+    alert('Use [kill him] or [do not]!');
+  }
+>>>>>>> 0db727e4dd2d903d2ab8f5dc94f11b8c3ce885c2
   }
 }
 
@@ -407,6 +421,7 @@ function game1() {
   alert('You walk outside. There is a path to the left and one to the right.');
   var path1 = prompt('Do you take the [left] path or the [right] path?').toLowerCase();
   if (path1 == 'left') {
+<<<<<<< HEAD
     if(path1a >= 0.25) {
       totalbattles = 1;
       alert('While walking, you find a monster.');
@@ -425,11 +440,89 @@ function game1() {
           coins = coins + xd12344;
           alert('You have ' + coins + ' coins!');
           game2();
+=======
+      if(path1a >= 0.25) {
+          totalbattles = 1;
+          alert('While walking, you find a monster.');
+          var path1ma = prompt('Do you [run] or [attack]?').toLowerCase();
+          if (path1ma == 'run') {
+            alert('You run away, but you drop ' + xd123 + ' coins on the way.');
+            game2();
+          } else if (path1ma == 'attack') {
+            alert('You managed to fight off the monster.');
+            if (path1lose <= 0.25) {
+              alert('While fighting, you see that you lost 2 coins.');
+              coins = coins - 2;
+              game2();
+              } else {
+                alert('You find ' + xd12344 + ' coins!');
+                coins = coins + xd12344;
+                alert('You have ' + coins + ' coins!');
+                game2();
+              }
+            }
+          } else {
+              game2();
+            }
+          } else if (path1 == 'right') {
+            if(path1a >= 0.25) {
+                totalbattles = 1;
+                alert('While walking, you find a monster.');
+                var path1ma1 = prompt('Do you [run] or [attack]?').toLowerCase();
+                if (path1ma1 == 'run') {
+                  alert('You run away, but you drop ' + xd123 + ' coins on the way.');
+                  game2();
+                } else if (path1ma1 == 'attack') {
+                  alert('You managed to fight off the monster.');
+                  if (path1lose <= 0.25) {
+                    alert('While fighting, you see that you lost 2 coins.');
+                    coins = coins - 2;
+                      game2();
+                    } else {
+                      alert('You find ' + xd12344 + ' coins!');
+                      coins = coins + xd12344;
+                        alert('You have ' + coins + ' coins!');
+                        game2();
+                      }
+                    }
+                  } else {
+                    alert('Use [run] or [attack]!');
+                  }
+                } else {
+                    alert('Use [left] or [right]!');
+            }
+}
+
+function game() {
+    //Instructions
+    alert('The goal of the game is to end with the most coins! Try to get over 60!');
+    alert('The game WILL close if you type something wrong. Capitals do not matter unless it is your name/nickname. Be careful when typing.');
+    alert('Please report bugs to https://github.com/bowser0000/keepyourcoins/issues (This link is in the code.)');
+    var name = prompt('What is your name?');
+    //Get Harshan Sword
+      if (name == 'Harshan') {
+        weapon = 'Harshan Sword';
+        damage = 9999;
+        game1();
+      } else if (name == 'Mr. Madden') {
+        weapon = 'Mr. Madden Sword';
+        damage = 15;
+        fire = 5;
+        game1();
+      } else if (name == 'John Cena') {
+        window.location = "https://www.niceme.me";
+      } else if (name == 'bowser0000') {
+        var test = true;
+        while (test === true)
+        {
+          alert('Nice try. Try again another day. You can press the \'Prevent this page from additional dialogues,\' but what\'s the fun in that? I have an idea, if you can get through these finite number of messages, I will give you a sword that does something cool. Good luck.');
+>>>>>>> 0db727e4dd2d903d2ab8f5dc94f11b8c3ce885c2
         }
       }
     } else {
       game2();
     }
+<<<<<<< HEAD
   } else if (path1 == 'right') {
     if(path1a >= 0.25) {
       totalbattles = 1;
@@ -487,6 +580,8 @@ function game() {
     game1();
   }
 }
+=======
+>>>>>>> 0db727e4dd2d903d2ab8f5dc94f11b8c3ce885c2
 
 game();
 
