@@ -25,8 +25,7 @@ var coins = var1; //Coin Count (Default Starting Coins (var1))
 var hp = 50; //Player HP
 var damage = 3; //Damage for weapon
 var fire = 0; //Extra Damage (Mr. Madden Sword only)
-var damagedone; //Defining before done
-var gain1; //Defining before done
+var gain1; //What option you chose your sword says
 var boss1hp = 25; //Dialva HP
 var boss1attack = randomDamage(1, 2); //Dialva attack damage
 var flipchance = Math.random(); //Flip-O-Rama Flip Chance
@@ -78,6 +77,14 @@ function checkPowerLevel() {
   }
 }
 
+function checkHP() {
+  if (hp < 1) {
+    alert('You slowly get weaker, until you breathe your last breath. You died.');
+    alert('You ended with ' + coins + ' coin(s)!');
+    throw new Error('You died!')
+  }
+}
+
 function game11() {
   alert('That\'s the end! You ended with ' + coins + ' coin(s)!');
   throw new Error('That\'s all folks!');
@@ -99,7 +106,7 @@ function game10() {
   alert('Some new text appears under those words.');
   alert('Damage: ' + damage + ' + 1.');
   basedamage = basedamage + 1;
-  alert('Damage: ' + damage + basedamage + '.');
+  alert('Damage: ' + eval(damage + basedamage) + '.');
   alert('You wonder about the power level.');
   alert('You try asking the people around you, but they don\'t seem to want to answer. One even kicks you in the head.');
   alert('It seems like everbody is trying to distance themselves away from you.');
@@ -127,9 +134,14 @@ function game10() {
         alert('You gained three power level and seven coins!');
         powerlevel = powerlevel + 3;
         realpowerlevel = realpowerlevel + 3;
+        checkPowerLevel();
         coins = coins + 7;
         game11();
       } else {
+        alert('??? did 2 damage to you!');
+        hp = hp - 2;
+        alert('You have ' + hp + ' HP left!');
+        checkHP();
         forcedmonsterone();
       }
     } else {
@@ -165,12 +177,13 @@ function game9() {
       coins = coins + 15;
       alert('You now have ' + coins + ' coin(s)!');
       game10();
-    } else if (flipchance == 0.01) {
+    } else if (flipchance <= 0.01) {
       alert('ON IT\'S CAP!');
       alert('"Wow! We\'ve never seen anything like it! Maybe we should have made it more rigged..." he says.');
       alert('"Anyways, you won 30 coins! Congratulations!"');
       coins = coins + 30;
       alert('You now have ' + coins +' coins!');
+      game10();
     }
   } else if (fliporama == 'no') {
     alert('You decided not to play.');
@@ -253,8 +266,8 @@ function game6() {
       alert('You can\'t run from a boss battle!');
       boss1func();
     } else if (boss1 == 'attack') {
-      alert('You did ' + damagedone + ' damage!');
-      boss1hp = boss1hp - damagedone;
+      alert('You did ' + eval(damage + fire + basedamage) + ' damage!');
+      boss1hp = boss1hp - eval(damage + fire + basedamage);
       if (boss1hp <= 0) {
         alert('You beat Dialva!');
         alert('You got 20 coins!');
@@ -266,6 +279,7 @@ function game6() {
         alert('Dialva did ' + boss1attack + ' damage to you!');
         hp = hp - boss1attack;
         alert('You have ' + hp + ' HP left!');
+        checkHP();
         boss1func();
       }
     } else {
@@ -397,7 +411,6 @@ function game2() {
 }
 
 function game1() {
-  damagedone = damage + fire + basedamage;
   alert('You wake up, and find ' + var1 + ' coin(s) on your bed!');
   alert('You now have ' + coins + ' coin(s)!');
   alert('You get out of bed and take a bath.');
