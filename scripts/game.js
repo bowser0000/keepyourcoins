@@ -33,7 +33,7 @@ var flipchance = Math.random(); //Flip-O-Rama Flip Chance
 var powerlevel = 5; //Power Level (Increases damage by 1 every multiple of 10)
 var realpowerlevel = 5; //Power Level which will reset to 0 after every damage increase.
 var plsubtract;
-var basedamage = 0;
+var basedamage = 0; //Power Level damage
 var forcedmonster1hp = 15;
 var route3a = Math.random();
 /* Weapon Damage
@@ -52,16 +52,31 @@ var battlesharshansword = 0;
 var battlesmrmaddensword = 0;
 var totalbattles = 0; //Total Battles with every weapon
 
-//TODO Fix this
-/*window.setTimeout(function checkPowerLevel(){
+function addBattle() {
+  if (weapon == 'Wooden Sword') {
+    battleswoodensword = battleswoodensword + 1;
+  } else if (weapon == 'Iron Sword') {
+    battlesironsword = battlesironsword + 1;
+  } else if (weapon == 'Diamond Sword') {
+    battlesdiamondsword = battlesdiamondsword + 1;
+  } else if (weapon == 'Emerald Sword') {
+    battlesemeraldsword = battlesemeraldsword + 1;
+  } else if (weapon == 'Harshan Sword') {
+    battlesharshansword = battlesharshansword + 1;
+  } else if (weapon == 'Mr. Madden Sword') {
+    battlesmrmaddensword = battlesmrmaddensword + 1;
+  }
+  totalbattles = totalbattles + 1;
+}
+
+function checkPowerLevel() {
   plsubtract = Math.floor(realpowerlevel / 10);
   if(plsubtract >= 1) {
-    damage = damage + plsubtract;
-    plsubtract = plsubtract * 10;
-    realpowerlevel = realpowerlevel - plsubtract;
-    alert('You have gained one attack damage.');
+    basedamage = plsubtract;
+    realpowerlevel = realpowerlevel - (plsubtract*10);
+    console.log('You have gained ' + plsubtract + ' attack damage.');
   }
-}, 100);*/
+}
 
 function game11() {
   alert('That\'s the end! You ended with ' + coins + ' coin(s)!');
@@ -115,7 +130,7 @@ function game10() {
         coins = coins + 7;
         game11();
       } else {
-        forcedmonster1hp();
+        forcedmonsterone();
       }
     } else {
       alert('Please use [run] or [attack]!');
@@ -244,19 +259,8 @@ function game6() {
         alert('You beat Dialva!');
         alert('You got 20 coins!');
         coins = coins + 20;
-        if (weapon == 'Harshan Sword') {
-          battlesharshansword = battlesharshansword + 1;
-          totalbattles = totalbattles + 1;
-          game7();
-        } else if (weapon == 'Mr. Madden Sword') {
-          battlesmrmaddensword = battlesmrmaddensword + 1;
-          totalbattles = totalbattles + 1;
-          game7();
-        } else {
-          battleswoodensword = battleswoodensword + 1;
-          totalbattles = totalbattles + 1;
-          game7();
-        }
+        addBattle();
+        game7();
       } else {
         alert('Dialva has ' + boss1hp + ' HP left!');
         alert('Dialva did ' + boss1attack + ' damage to you!');
@@ -487,7 +491,5 @@ function game() {
     game1();
   }
 }
-
-game();
 
 //Looking at the source code, eh?
