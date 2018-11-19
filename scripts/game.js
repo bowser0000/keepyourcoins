@@ -53,19 +53,36 @@ var totalbattles = 0; //Total Battles with every weapon
 
 function addBattle() {
   if (weapon == 'Wooden Sword') {
-    battleswoodensword = battleswoodensword + 1;
+    battleswoodensword++;
   } else if (weapon == 'Iron Sword') {
-    battlesironsword = battlesironsword + 1;
+    battlesironsword++;
   } else if (weapon == 'Diamond Sword') {
-    battlesdiamondsword = battlesdiamondsword + 1;
+    battlesdiamondsword++;
   } else if (weapon == 'Emerald Sword') {
-    battlesemeraldsword = battlesemeraldsword + 1;
+    battlesemeraldsword++;
   } else if (weapon == 'Harshan Sword') {
-    battlesharshansword = battlesharshansword + 1;
+    battlesharshansword++;
   } else if (weapon == 'Mr. Madden Sword') {
-    battlesmrmaddensword = battlesmrmaddensword + 1;
+    battlesmrmaddensword++;
   }
-  totalbattles = totalbattles + 1;
+  totalbattles++;
+}
+
+// Return correct weapon in battles fought with statistic
+function bFW() {
+  if (weapon == 'Wooden Sword') {
+    return battleswoodensword;
+  } else if (weapon == 'Iron Sword') {
+    return battlesironsword;
+  } else if (weapon == 'Diamond Sword') {
+    return battlesdiamondsword
+  } else if (weapon == 'Emerald Sword') {
+    return battlesemeraldsword;
+  } else if (weapon == 'Harshan Sword') {
+    return battlesharshansword;
+  } else if (weapon == 'Mr. Madden Sword') {
+    return battlesmrmaddenaword;
+  }
 }
 
 function checkPowerLevel() {
@@ -81,11 +98,14 @@ function checkHP() {
   if (hp < 1) {
     alert('You slowly get weaker, until you breathe your last breath. You died.');
     alert('You ended with ' + coins + ' coin(s)!');
-    throw new Error('You died!')
+    throw new Error('You died!');
   }
 }
 
 function game11() {
+  alert('As you walk up to the dead monster, you find out a devastating fact.');
+  alert('The monster was your older self.');
+  alert('As you go up to touch it, the body wisps away.');
   alert('That\'s the end! You ended with ' + coins + ' coin(s)!');
   throw new Error('That\'s all folks!');
 }
@@ -100,12 +120,12 @@ function game10() {
   alert('You suddenly get extremely hungry. You rush to the nearest Clucken Bell to have two number 9s, a number 9 large, a number 6 with extra dip, a number 7, two numbers 45s, one with cheese, and a large soda.');
   alert('You get your order and you eat it very quickly.');
   alert('The text wisps back, but the number is different.');
-  powerlevel = powerlevel + 5;
-  realpowerlevel = realpowerlevel + 5;
+  powerlevel += 5;
+  realpowerlevel += 5;
   alert('It says \'Power Level: ' + powerlevel + '.\'');
   alert('Some new text appears under those words.');
   alert('Damage: ' + damage + ' + 1.');
-  basedamage = basedamage + 1;
+  basedamage++;
   alert('Damage: ' + eval(damage + basedamage) + '.');
   alert('You wonder about the power level.');
   alert('You try asking the people around you, but they don\'t seem to want to answer. One even kicks you in the head.');
@@ -132,14 +152,15 @@ function game10() {
       if (forcedmonster1hp <= 0) {
         alert('You beat the monster!');
         alert('You gained three power level and seven coins!');
-        powerlevel = powerlevel + 3;
-        realpowerlevel = realpowerlevel + 3;
+        powerlevel += 3;
+        realpowerlevel += 3;
         checkPowerLevel();
-        coins = coins + 7;
+        coins += 7;
+        addBattle();
         game11();
       } else {
         alert('??? did 2 damage to you!');
-        hp = hp - 2;
+        hp -= 2;
         alert('You have ' + hp + ' HP left!');
         checkHP();
         forcedmonsterone();
@@ -174,14 +195,14 @@ function game9() {
     } else if (flipchance > 0.01 && flipchance <= 0.24) {
       alert('And it stays!');
       alert('"Congratulations! You just won 15 coins!"');
-      coins = coins + 15;
+      coins += 15;
       alert('You now have ' + coins + ' coin(s)!');
       game10();
     } else if (flipchance <= 0.01) {
       alert('ON IT\'S CAP!');
       alert('"Wow! We\'ve never seen anything like it! Maybe we should have made it more rigged..." he says.');
       alert('"Anyways, you won 30 coins! Congratulations!"');
-      coins = coins + 30;
+      coins += 30;
       alert('You now have ' + coins +' coins!');
       game10();
     }
@@ -206,13 +227,13 @@ function game8() {
   alert('It\'s all normal, except for one part. It translates to \'You can get much more blank if you have success.\'');
   gain1 = prompt('Do you replace it with [strength], [stamina] or [famous]?').toLowerCase();
   if (gain1 == 'strength') {
-    basedamage = basedamage + 4;
+    basedamage += 4;
     game9();
   } else if (gain1 == 'stamina') {
-    hp = hp + 10;
+    hp += 10;
     game9();
   } else if (gain1 == 'famous') {
-    coins = coins + 15;
+    coins += 15;
     game9();
   }
 }
@@ -227,7 +248,7 @@ function game7() {
   alert('\"Hey man, you gotta buy this Iron Sword. I have to get the cops off- I mean, It\'s really good and does 5 damage. It\'s only 15 coins!\"');
   var isword = prompt('Will you buy the Iron Sword? [Yes] or [No]?').toLowerCase();
   if (isword == 'yes') {
-    coins = coins - 15;
+    coins -= 15;
     if (weapon == 'Harshan Sword') {
       alert('You have the Harshan Sword, you did not equip the Iron Sword');
       game8();
@@ -267,17 +288,17 @@ function game6() {
       boss1func();
     } else if (boss1 == 'attack') {
       alert('You did ' + eval(damage + fire + basedamage) + ' damage!');
-      boss1hp = boss1hp - eval(damage + fire + basedamage);
+      boss1hp -= eval(damage + fire + basedamage);
       if (boss1hp <= 0) {
         alert('You beat Dialva!');
         alert('You got 20 coins!');
-        coins = coins + 20;
+        coins += 20;
         addBattle();
         game7();
       } else {
         alert('Dialva has ' + boss1hp + ' HP left!');
         alert('Dialva did ' + boss1attack + ' damage to you!');
-        hp = hp - boss1attack;
+        hp -= boss1attack;
         alert('You have ' + hp + ' HP left!');
         checkHP();
         boss1func();
@@ -307,7 +328,7 @@ function game5() {
     if (donate == 'give money') {
       alert('You give the man 2 coins.');
       alert('He replies with \'Hey bro. We\'re actually recording a video, bro. Social experiment, bro! Here\'s 10 coins because you donated, bro!');
-      coins = coins + 8;
+      coins += 8;
       alert('You have ' + coins + ' coin(s)!');
       game6();
     } else if (donate == 'do not') {
@@ -320,7 +341,7 @@ function game5() {
 }
 
 function game4() {
-  alert('You walk towards a intersection.');
+  alert('You walk towards an intersection.');
   var route3 = prompt('Do you go [straight], [left] or [right]?').toLowerCase();
   if (route3 == 'straight') {
     alert('You go straight, not worrying about the other paths.');
@@ -328,7 +349,7 @@ function game4() {
     var route3s = prompt('Do you take the [left] or the [right] path?');
     if (route3s == 'left') {
       alert('You can see the exit in your view. While getting closer, you feel a tug on your leg. 20 coins! It must be your lucky day!');
-      coins = coins + 5;
+      coins += 5;
       game5();
     } else if (route3s == 'right') {
       alert('You find yourself walking into a forest. The trees and leaves are getting thicker and thicker. When you look back down, you realize you\'ve gotten lost.');
@@ -366,7 +387,7 @@ function game3() {
   var dustoff = prompt('Do you [dust off] or [do not]?').toLowerCase();
   if (dustoff == 'dust off') {
     alert('You dust off the mold, finding a coin under the moss.');
-    coins = coins + 1;
+    coins++;
     alert('The sign says \"Entering: Route 3.\" You can see small dents under the words. You squint your eyes and look closer. \"Straight, left.\"');
     game4();
   } else if (dustoff == 'do not') {
@@ -382,13 +403,13 @@ function game2() {
   alert('You find a little shop on the side.');
   alert('He says \"It\'s Christmas!\" He gives you a ' + weapon + ' for free!');
   alert('You inspect your ' + weapon + '.');
-  alert('Coins: ' + coins + '\nWeapon: ' + weapon + '\nDamage: ' + damage + '\nBattles Fought With: ' + battleswoodensword + '\nBattles Fought: ' + totalbattles);
+  alert('Coins: ' + coins + '\nWeapon: ' + weapon + '\nDamage: ' + damage + '\nBattles Fought With: ' + bFW() + '\nBattles Fought: ' + totalbattles);
   alert('The shop keeper tells you \'Hey, go kill that guy over there with that sword, and I\'ll give you a few coins ;)\'');
   var kill = prompt('Do you [kill him] or [do not]?').toLowerCase();
   if (kill == 'kill him') {
     if (weapon == 'Harshan Sword') {
       alert('Your Harshan Sword rips him in half, and the shop keeper gives you ' + killwin + ' coins!');
-      coins = coins + killwin;
+      coins += killwin;
       game3();
     } else if (kill2 >= 0.5) {
       alert('The guy manages to fight back, and kills you.');
@@ -399,7 +420,7 @@ function game2() {
       game3();
     } else if(kill2 <= 0.5) {
       alert('You kill him, and the shop keeper gives you ' + killwin + ' coins!');
-      coins = coins + killwin;
+      coins += killwin;
       game3();
     }
   } else if (kill == 'do not') {
@@ -415,11 +436,11 @@ function game1() {
   alert('You now have ' + coins + ' coin(s)!');
   alert('You get out of bed and take a bath.');
   alert('While taking off your pants, you find ' + var2 + ' coin(s) in your pocket!');
-  coins = coins + var2;
+  coins += var2;
   alert('You now have ' + coins + ' coin(s)!');
   alert('You go downstairs and find your XBOX gold ran out.');
   alert('You pay 6 coins and play some Titanfall.');
-  coins = coins - 6;
+  coins -= 6;
   alert('You now have ' + coins + ' coin(s)!');
   alert('You walk outside. There is a path to the left and one to the right.');
   var path1 = prompt('Do you take the [left] path or the [right] path?').toLowerCase();
@@ -430,16 +451,17 @@ function game1() {
       var path1ma = prompt('Do you [run] or [attack]?').toLowerCase();
       if (path1ma == 'run') {
         alert('You run away, but you drop ' + xd123 + ' coins on the way.');
+        coins -= xd123;
         game2();
       } else if (path1ma == 'attack') {
         alert('You managed to fight off the monster.');
         if (path1lose <= 0.25) {
           alert('While fighting, you see that you lost 2 coins.');
-          coins = coins - 2;
+          coins -= 2;
           game2();
         } else {
           alert('You find ' + xd12344 + ' coins!');
-          coins = coins + xd12344;
+          coins += xd12344;
           alert('You have ' + coins + ' coins!');
           game2();
         }
@@ -454,25 +476,26 @@ function game1() {
       var path1ma1 = prompt('Do you [run] or [attack]?').toLowerCase();
       if (path1ma1 == 'run') {
         alert('You run away, but you drop ' + xd123 + ' coins on the way.');
+        coins -= xd123;
         game2();
       } else if (path1ma1 == 'attack') {
         alert('You managed to fight off the monster.');
         if (path1lose <= 0.25) {
           alert('While fighting, you see that you lost 2 coins.');
-          coins = coins - 2;
+          coins -= 2;
           game2();
         } else {
           alert('You find ' + xd12344 + ' coins!');
-          coins = coins + xd12344;
+          coins += xd12344;
           alert('You have ' + coins + ' coins!');
           game2();
         }
+      } else {
+        alert('Use [run] or [attack]!');
       }
     } else {
-      alert('Use [run] or [attack]!');
+      alert('Use [left] or [right]!');
     }
-  } else {
-    alert('Use [left] or [right]!');
   }
 }
 
